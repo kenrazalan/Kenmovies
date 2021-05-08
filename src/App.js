@@ -4,6 +4,7 @@ import Banner from './components/landingpage/Banner';
 import Navbar from './components/navbar/Navbar';
 import store from './redux/store'
 import WebFont from 'webfontloader';
+import LandingPage from './components/landingpage/LandingPage';
 
 WebFont.load({
   google: {
@@ -16,7 +17,7 @@ function App() {
     <div className="App">
         <Provider store={store}>
         <Navbar/>
-        <Banner/>
+        <LandingPage/>
         </Provider>
     </div>
   );
