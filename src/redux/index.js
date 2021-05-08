@@ -1,0 +1,1 @@
+export {fetchNetflixOriginals} from './netflixOriginals/netflixOriginalsAction'

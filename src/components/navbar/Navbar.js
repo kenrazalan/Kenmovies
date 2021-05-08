@@ -15,7 +15,6 @@ const NavWrapper = styled.div`
         display: flex;
         align-items: center;
         z-index: 10;
-        background: red;
     }
     p{
         padding-left: 2%;
