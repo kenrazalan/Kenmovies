@@ -1,52 +1,40 @@
 import React, { useEffect,useState } from 'react'
+import {useHistory} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import {fetchNetflixOriginals} from '../../redux'
+import {truncateString} from './truncateString'
+import {BannerContainer} from './style'
 
-import styled from 'styled-components'
 
-const BannerContainer  = styled.div`
-    .banner-container{
-        width:100%;
-        height:460px;
-        margin: 0 auto;
-        background-size: cover;
-        background-position: center;
-        object-fit: contain;
-        position: relative;
-    }
-    .banner-container::before{
-        content:'';
-        position: absolute;
-        width: 100%;
-        height:50%;
-        bottom: 0;
-        z-index: 0;
-        background-image: linear-gradient(360deg,#111,rgba(17, 17, 17, 0.8),transparent);
-        left:0;
-}
-`
 
 function Banner() {
-
+    const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchNetflixOriginals())
         setBanner(Math.floor(Math.random()* 19))
-    },[])
-
+    },[dispatch])
+    const history = useHistory();
     const [banner,setBanner] = useState()
     const netflixOriginals = useSelector(state => state.netflixOriginals.items) 
     console.log(netflixOriginals)
-    const dispatch = useDispatch();
+    
  
     return (
         <BannerContainer>
         <div className="banner-container"
         style={{
-            backgroundImage:netflixOriginals.results && `url(https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.backdrop_path})`
+            backgroundImage:netflixOriginals?.results && `url(https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.backdrop_path})`
         }} >
-            <div>
-
+            {netflixOriginals.results &&
+            <div className="banner">
+                <div className="banner-info">
+                <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
+                <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
+                <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
+                </div>
             </div>
+
+            }
         </div>
         </BannerContainer>
     )
