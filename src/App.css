@@ -9,6 +9,7 @@ html {
   color: #fff;
   overflow-x: hidden;
   letter-spacing: .5px;
+  background-color: #0b0c0e;
 }
 
 *, *:before, *:after {

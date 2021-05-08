@@ -61,7 +61,12 @@ export const BannerContainer  = styled.div`
         background-color: #e6e6e6;
         color: #000;
     }
-
+    .icon-star{
+        color: yellow;
+    }
+    .rating{
+        padding: 10px 0 5px 0;
+    }
 
 
 `

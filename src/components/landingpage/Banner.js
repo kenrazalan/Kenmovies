@@ -29,6 +29,8 @@ function Banner() {
             <div className="banner">
                 <div className="banner-info">
                 <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
+              <span className="rating"><span className="icon-star">★ </span> 
+              {netflixOriginals?.results[banner].vote_average} Rating</span>
                 <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
                 <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
                 </div>
