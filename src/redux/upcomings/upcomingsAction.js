@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const fetchUpcomings = () => async dispatch =>{
     const res = await axios(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=f8f1429a9290056c3bfea1ac479a357f`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}`
     )
     dispatch({
         type: FETCH_UPCOMINGS,

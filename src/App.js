@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import store from './redux/store'
 import WebFont from 'webfontloader';
 import LandingPage from './components/landingpage/LandingPage';
+require('dotenv').config()
 
 WebFont.load({
   google: {
