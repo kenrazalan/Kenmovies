@@ -8,12 +8,14 @@ function Movies({results,title}) {
        
         {results?.results &&  
          
-        <div movies-container>
+        <div className="movies-container">
             <h1>{title}</h1>
             <div className="movies"> 
-                {results.results.slice(0,10).map(res=>
+                {results.results.slice(0,10).map(res=>{
+                    console.log(res)
+                    return( 
                 <>
-                    <div className="pointer">
+                    <div className="movie pointer">
                       <div className="image-container">
                         <div style={{
                             background: res.vote_average > 7 ? "#3bb33b" : "#aaa"
@@ -24,7 +26,7 @@ function Movies({results,title}) {
                         <p className="title bold">{res.original_title}</p>
                         <p className="release-date">{res.release_date}</p> 
                     </div>
-                </>
+                </>)}
                 )}
             </div>
         </div>}

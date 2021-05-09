@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 export const UpcommingsWrapper  = styled.div`
-    .movies-container{
-        
+    .movies-container{    
+
         width:100%;
+        padding:  0rem 4.8rem;
     }
-    .movies{
+    .movies{      
         padding-bottom: 50px;
         margin-top: 50px;
         width:100%;
@@ -14,33 +15,42 @@ export const UpcommingsWrapper  = styled.div`
         grid-template-columns: repeat(5,1fr);
         grid-gap: 1.2rem;
     }
+    .movie{ 
+    }
     .release-date{
         margin-bottom: 15px;
     }
     @media screen and (max-width: 976px) {
-        .movies{
-            grid-template-columns: repeat(4,1fr); 
+        .movies{           
+            grid-template-columns: repeat(4,1fr);         
         }
     }
     @media screen and (max-width: 790px) {
         .movies{
             grid-template-columns: repeat(3,1fr); 
             grid-gap: 0rem;
+            padding: 0;
         }
         .release-date{
            
         }
     }
     @media screen and (max-width: 480px) {
+        .movies-container{
+            padding:  0;
+        }
         .movies{
             grid-template-columns: repeat(2,1fr); 
             
         }
         img{
-            height: 230px !important;
+            height: 230px !important;       
         }
         p{
-            font-size: 12px;
+            font-size: 12px;        
+        }
+        .movie{
+            max-width: 80%;
         }
     }
     img{

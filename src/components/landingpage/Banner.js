@@ -26,6 +26,7 @@ function Banner() {
             backgroundImage:netflixOriginals?.results && `url(https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.backdrop_path})`
         }} >
             {netflixOriginals.results &&
+            <>
             <div className="banner">
                 <div className="banner-info">
                 <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
@@ -34,9 +35,11 @@ function Banner() {
                 <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
                 <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
                 </div>
+                <img src={`https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.poster_path}`} alt="test"/>
             </div>
-
-            }
+           
+            </>
+            }          
         </div>
         </BannerContainer>
     )
