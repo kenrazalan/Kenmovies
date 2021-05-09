@@ -2,11 +2,11 @@ import React from 'react'
 import {UpcommingsWrapper} from './style'
 
 function Movies({results,title}) {
-    console.log(results.results)
+    console.log(results?.results)
     return (
         <UpcommingsWrapper>
        
-        {results.results &&  
+        {results?.results &&  
          
         <div movies-container>
             <h1>{title}</h1>
