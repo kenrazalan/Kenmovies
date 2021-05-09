@@ -34,7 +34,13 @@ export const UpcommingsWrapper  = styled.div`
     @media screen and (max-width: 480px) {
         .movies{
             grid-template-columns: repeat(2,1fr); 
-            grid-gap: 0rem;
+            
+        }
+        img{
+            height: 230px !important;
+        }
+        p{
+            font-size: 12px;
         }
     }
     img{

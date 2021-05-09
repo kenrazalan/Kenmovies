@@ -21,7 +21,7 @@ function Movies({results,title}) {
                         <img src={`https://image.tmdb.org/t/p/w500/${res.poster_path}`} 
                         alt={res.original_title} key={res.id}/>
                      </div>
-                        <p className="bold">{res.original_title}</p>
+                        <p className="title bold">{res.original_title}</p>
                         <p className="release-date">{res.release_date}</p> 
                     </div>
                 </>
