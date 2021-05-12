@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { useHistory, useParams } from 'react-router'
-import {fetchPreviewDetails} from '../../redux'
+import {fetchPreviewDetails,fetchCasts} from '../../redux'
 import { truncateString } from '../landingpage/truncateString';
+import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
 
 function Preview() {
@@ -12,11 +13,14 @@ function Preview() {
     useEffect(() => {
         window.scrollTo(0,0)
         dispatch(fetchPreviewDetails(type,id))
+        dispatch(fetchCasts(type,id))
 
+        
     }, [dispatch,type,id])
     const previewDetails = useSelector(state => state.previewDetails.items) 
+    const casts = useSelector(state => state.casts.items) 
     const lastIndex = previewDetails?.genres.length-1
-    console.log(previewDetails)
+    console.log(casts.cast)
     return (
         <PreviewWrapper>
         <div className="preview-container"
@@ -52,9 +56,9 @@ function Preview() {
             </div>
             </div>
             </>
-            }
-          
+            }          
         </div>
+        <Casts casts={casts?.cast}/>
         </PreviewWrapper>
     )
 }
