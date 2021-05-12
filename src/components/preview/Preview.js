@@ -10,6 +10,7 @@ function Preview() {
     const dispatch = useDispatch();
     const {type,id} = useParams()
     useEffect(() => {
+        window.scrollTo(0,0)
         dispatch(fetchPreviewDetails(type,id))
 
     }, [dispatch,type,id])

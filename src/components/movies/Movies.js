@@ -1,8 +1,10 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import {UpcommingsWrapper} from './style'
 
 function Movies({results,title}) {
     console.log(results?.results)
+    const history = useHistory();
     return (
         <UpcommingsWrapper>
        
@@ -15,7 +17,7 @@ function Movies({results,title}) {
                     console.log(res)
                     return( 
                 <>
-                    <div className="movie pointer">
+                    <div className="movie pointer" onClick={()=>history.push(`preview/${res?.id}/movie`)}>
                       <div className="image-container">
                         <div style={{
                             background: res.vote_average > 7 ? "#3bb33b" : "#aaa"
