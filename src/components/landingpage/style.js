@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const BannerContainer  = styled.div`
     .banner-container{
         width:100%;
-        height:100vh;
+        max-height:100vh;
         margin: 0 auto;
         background-size: cover;
         background-position: center;
         object-fit: contain;
         position: relative;  
-        padding: 0px 10%; 
+        padding: 8rem 10% 12rem; 
     }
     .banner-container::before{      
         content:'';
@@ -35,8 +35,9 @@ export const BannerContainer  = styled.div`
     @media screen and (max-width: 790px) {
 
         img{
-             height: 180px !important;
-             width: 120px !important;
+             height: 200px !important;
+             width: 140px !important;
+             
         }
         .banner{
             padding: 0;
@@ -55,6 +56,13 @@ export const BannerContainer  = styled.div`
         h1{
             font-size: 19px !important;
         }
+        .title-rating{
+            padding-top: 12px;
+        }
+        .rating{
+            padding: 0 !important;
+        }
+
     }
     img{
         height: 400px;
@@ -62,6 +70,7 @@ export const BannerContainer  = styled.div`
         border-radius: 6px;
         box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
         object-fit: cover;
+        
     }
     .banner .banner-info {
         z-index: 4;
