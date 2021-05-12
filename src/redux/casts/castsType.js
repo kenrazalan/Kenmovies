@@ -1,0 +1,1 @@
+export const FETCH_CASTS = 'FETCH_CASTS'
