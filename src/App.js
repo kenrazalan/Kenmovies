@@ -1,10 +1,12 @@
 import './App.css';
 import {Provider} from 'react-redux'
-import Banner from './components/landingpage/Banner';
 import Navbar from './components/navbar/Navbar';
 import store from './redux/store'
 import WebFont from 'webfontloader';
 import LandingPage from './components/landingpage/LandingPage';
+import { Route, Switch } from 'react-router';
+import Preview from './components/preview/Preview';
+import { BrowserRouter } from 'react-router-dom';
 require('dotenv').config()
 
 WebFont.load({
@@ -18,7 +20,17 @@ function App() {
     <div className="App">
         <Provider store={store}>
         <Navbar/>
-        <LandingPage/>
+        <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <LandingPage/>
+          </Route>
+          <Route exact path="/preview/:id/:type">
+            <Preview/>
+          </Route>
+           
+        </Switch>
+        </BrowserRouter>
         </Provider>
     </div>
   );

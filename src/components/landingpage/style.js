@@ -52,6 +52,9 @@ export const BannerContainer  = styled.div`
         h2{
             font-size: .9rem !important;          
         }
+        h1{
+            font-size: 19px !important;
+        }
     }
     img{
         height: 400px;
