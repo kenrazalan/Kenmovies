@@ -89,8 +89,8 @@ export const PreviewWrapper  = styled.div`
 
     @media screen and (max-width: 790px) {
         img{
-            height: 180px !important;
-            width: 120px !important;
+            height: 300px !important;
+            width: 200px !important;
             padding-right: 0;
         }
         h1{
@@ -117,16 +117,12 @@ export const PreviewWrapper  = styled.div`
         }
     }
     @media screen and (max-width: 480px) {
-        img{
-        height: 180px !important;
-        width: 120px !important;
-        }
         h1{
             font-size: 19px !important;
             padding-top: 12px;
         }
         .genres, .rating ,h2{
-            font-size: .9rem !important;
+            font-size: 1rem !important;
         }
         .view{
             padding-bottom: 8rem;

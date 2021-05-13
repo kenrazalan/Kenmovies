@@ -22,6 +22,7 @@ function Preview() {
     const lastIndex = previewDetails?.genres.length-1
     console.log(casts.cast)
     return (
+        <>
         <PreviewWrapper>
         <div className="preview-container"
         style={{
@@ -49,7 +50,7 @@ function Preview() {
                         )}
                       </div>
                     </div>
-                    <h2 className="overview">Overview</h2>           
+                    <h1 className="overview">Overview</h1>           
                     <h2>{truncateString(previewDetails?.overview,160)}</h2>
                 </div>
                
@@ -58,8 +59,9 @@ function Preview() {
             </>
             }          
         </div>
-        <Casts casts={casts?.cast}/>
         </PreviewWrapper>
+        <Casts casts={casts?.cast}/>
+        </>
     )
 }
 

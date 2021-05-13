@@ -11,12 +11,42 @@ export const CastsWrapper  = styled.div`
         width: 100%;
         display: grid;
         justify-items: center;
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: 1.2rem;
+        grid-template-columns: repeat(6,1fr);
+        grid-gap: 1rem;
     }
-    img{
+    .cast-img{
         
         border-radius: 6px;
-        height: 270px;
+        height: 230px;
+    }
+    .character{
+        font-size: 11px;
+    }
+    @media screen and (max-width: 1100px) {
+        .casts{           
+            grid-template-columns: repeat(5,1fr);         
+        }
+    }
+    @media screen and (max-width: 976px) {
+        .casts{           
+            grid-template-columns: repeat(4,1fr);         
+        }
+    }
+    @media screen and (max-width: 790px) {
+        .casts{
+            grid-template-columns: repeat(3,1fr); 
+            
+            padding: 0;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .casts-container{
+            padding: 0;
+        }
+        .casts{
+            grid-template-columns: repeat(2,1fr); 
+            
+            padding: 0;
+        }
     }
     `

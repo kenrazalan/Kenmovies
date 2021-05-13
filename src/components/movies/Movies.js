@@ -14,7 +14,6 @@ function Movies({results,title}) {
             <h1>{title}</h1>
             <div className="movies"> 
                 {results.results.slice(0,10).map(res=>{
-                    console.log(res)
                     return( 
                 <>
                     <div className="movie pointer" onClick={()=>history.push(`preview/${res?.id}/movie`)}>
