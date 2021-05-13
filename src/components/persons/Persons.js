@@ -29,7 +29,9 @@ function Persons() {
             <>
             <div className="view">
                 <div className="back">
-                      <button onClick={()=>history.goBack()}>Back</button>
+                    <div className="btn pointer">
+                      <button className="back-button pointer bold" onClick={()=>history.goBack()}>Back</button>
+                    </div>  
                 </div>
           
             <div className="person">

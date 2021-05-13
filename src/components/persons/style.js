@@ -30,11 +30,7 @@ export const PersonsWrapper  = styled.div`
         align-items: center;
         padding:  0rem 0rem 12rem ;
     }
-    .back{
-        padding: 8rem 0 3rem 0; 
-        align-self: flex-start;
-        z-index: 2;
-    }
+
     .person{
         width: 100%;
         height:100%;

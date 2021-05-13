@@ -20,11 +20,7 @@ export const PreviewWrapper  = styled.div`
         align-items: center;
         padding:  0rem 0rem 12rem ;
     }
-    .back{
-        padding: 8rem 0 3rem 0; 
-        align-self: flex-start;
-        z-index: 2;
-    }
+
     button{
     }
     .preview-container::before{      
