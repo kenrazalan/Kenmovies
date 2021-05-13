@@ -83,6 +83,7 @@ export const BannerContainer  = styled.div`
     }
     .banner .banner-info h1{
         font-size: 28px;
+        padding: 10px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     }
     .banner .banner-info h2{
@@ -112,6 +113,7 @@ export const BannerContainer  = styled.div`
         color: yellow;
     }
     .rating{
+        font-size: 1.3rem;
         padding: 10px 0 5px 0;
     }
 
