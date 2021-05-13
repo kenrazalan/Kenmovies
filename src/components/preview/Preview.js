@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { useHistory, useParams } from 'react-router'
-import {fetchPreviewDetails,fetchCasts} from '../../redux'
+import {fetchPreviewDetails,fetchCasts, fetchCastsDetails} from '../../redux'
 import { truncateString } from '../landingpage/truncateString';
 import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
@@ -14,6 +14,7 @@ function Preview() {
         window.scrollTo(0,0)
         dispatch(fetchPreviewDetails(type,id))
         dispatch(fetchCasts(type,id))
+        dispatch(fetchCastsDetails())
 
         
     }, [dispatch,type,id])

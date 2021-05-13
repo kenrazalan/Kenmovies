@@ -16,6 +16,7 @@ export const PreviewWrapper  = styled.div`
     .view{
         display: flex;
         flex-direction: column;
+        
         align-items: center;
         padding:  0rem 0rem 12rem ;
     }

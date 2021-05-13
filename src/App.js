@@ -7,6 +7,7 @@ import LandingPage from './components/landingpage/LandingPage';
 import { Route, Switch } from 'react-router';
 import Preview from './components/preview/Preview';
 import { BrowserRouter } from 'react-router-dom';
+import Persons from './components/persons/Persons';
 require('dotenv').config()
 
 WebFont.load({
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/preview/:id/:type">
             <Preview/>
+          </Route>
+          <Route exact path="/person/:id">
+            <Persons/>
           </Route>
            
         </Switch>
