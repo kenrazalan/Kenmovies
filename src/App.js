@@ -20,8 +20,9 @@ function App() {
   return (
     <div className="App">
         <Provider store={store}>
+        <BrowserRouter>  
         <Navbar/>
-        <BrowserRouter>
+        
         <Switch>
           <Route exact path="/">
             <LandingPage/>
