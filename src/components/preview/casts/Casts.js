@@ -5,6 +5,7 @@ function Casts({casts}) {
     return (
         <CastsWrapper>
         <div className="casts-container">
+        <h1 className="title">Top Billed Casts</h1>
             <div className="casts">
                  {casts?.slice(0,12).map(cast=> 
                  <div className="cast-container">

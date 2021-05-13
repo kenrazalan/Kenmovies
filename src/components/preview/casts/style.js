@@ -22,6 +22,9 @@ export const CastsWrapper  = styled.div`
     .character{
         font-size: 11px;
     }
+    .title{
+        padding: 2rem 0 0 2rem;
+    }
     @media screen and (max-width: 1100px) {
         .casts{           
             grid-template-columns: repeat(5,1fr);         
