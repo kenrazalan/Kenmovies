@@ -62,7 +62,7 @@ export const PersonsWrapper  = styled.div`
     }
     img{
         height: 400px;
-        width: 300px;
+        min-width: 300px;
         border-radius: 6px;
         box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
         object-fit: cover;
@@ -80,7 +80,7 @@ export const PersonsWrapper  = styled.div`
     }
     img{
         height: 300px !important;
-        width: 200px !important;
+        min-width: 200px !important;
         padding-right: 0;
         margin: 0;
     }
