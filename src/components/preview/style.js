@@ -21,8 +21,7 @@ export const PreviewWrapper  = styled.div`
         padding:  0rem 0rem 12rem ;
     }
 
-    button{
-    }
+
     .preview-container::before{      
         content:'';
         position: absolute;

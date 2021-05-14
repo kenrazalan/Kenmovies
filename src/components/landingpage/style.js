@@ -97,7 +97,10 @@ export const BannerContainer  = styled.div`
         transition: .5s;
         padding: 10px 20px;
         width: 100px;
-        background-color: rgba(17, 17, 17, 0.8);
+        //background-color: rgba(17, 17, 17, 0.8);
+        background: #3bb33b;
+        font-weight: bold;
+        letter-spacing: 2px;
         color:#fff;
         border:none;
         outline: none;

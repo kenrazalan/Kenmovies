@@ -17,6 +17,9 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+li{
+  list-style: none;
+}
 
 body,h1,h2,h3,h4,h5,h6{
   font-family: Yantramanav,Helvetica,Arial,sans-serif;
@@ -47,12 +50,14 @@ a{
 .btn{
   padding-left: 22px;
   transition: padding-left .3s ease;
+  
 }
 .back-button{
   background: none;
   color: #FFF;
   border: none;
   position: relative;
+  padding: 0 2.2rem;
 }
 .btn:hover{
   padding-left: 15px;
@@ -60,19 +65,31 @@ a{
 .back-button::before{
   content: "";
   bottom: 7px;
-  right: 42px;
+  right: 71px;
   width: 40px;
   height: 1px;
   position: absolute;
   background: #FFF;
 }
 .back-button::after{
+  
   content: "";
   bottom: 11px;
   width: 12px;
-  right: 72px;
+  right: 101px;
   height: 1px;
   position: absolute;
   background: #FFF;
   transform: rotate(-45deg);
+}
+@media screen and (max-width: 480px) {
+  .back-button{
+      padding: 0;
+  }
+  .back-button::before{
+    right: 42px ;
+  }
+  .back-button::after{
+    right: 72px ;
+  }
 }
