@@ -57,7 +57,7 @@ function Preview() {
                 </div>
           
             <div className="preview-banner">
-                 {!isLoading?
+                 {!isLoading && previewDetails?
                      <img src={`https://image.tmdb.org/t/p/w1280${previewDetails?.poster_path}`} alt="poster"/>
             
             : <Skeleton width={300} height={400}/>
@@ -65,17 +65,17 @@ function Preview() {
                  
                 <div className="preview-banner-info">
                    
-                        <h1>{!isLoading ? previewDetails?.original_title || previewDetails?.name   :
+                        <h1>{!isLoading && previewDetails? previewDetails?.original_title || previewDetails?.name   :
                          <Skeleton width={150} />}</h1>
                                   
                     <div className="rating-genres-container">
-                    { !isLoading ?  <span className="rating">
+                    { !isLoading && previewDetails?  <span className="rating">
                                    <span className="icon-star">★ </span> 
                                    {previewDetails?.vote_average} Rating
                                    </span> : 
                                    <Skeleton width={150}/>}
                       <div className="genres">
-                        {!isLoading ?
+                        {!isLoading && previewDetails?
                         previewDetails?.genres.map((genre,i) =>                       
                             <span>{genre.name} {lastIndex !== i && <span> / </span>} </span> 
                         ) : <Skeleton width={150}/> }
@@ -83,7 +83,7 @@ function Preview() {
                     </div>
                     <h1 className="overview"> {!isLoading ? "Overview" : <Skeleton width={150}/>}</h1>           
                     <h2>
-                        { !isLoading ?
+                        { !isLoading && previewDetails?
                         truncateString(previewDetails?.overview,160)
                         : <Skeleton count={3} width={500}/>
                         }
