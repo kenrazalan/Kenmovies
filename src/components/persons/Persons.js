@@ -57,9 +57,9 @@ function Persons() {
                 }
                  
                 <div className="person-info">
-                    <h1>{isLoading? <Skeleton width={150}/> : castsDetails?.name}</h1>
-                    {isLoading? <Skeleton width={150}/> :  <h2 className="bold biography">Biography</h2>} 
-                    {isLoading ? <Skeleton count={4}/> : 
+                    <h1>{!isLoading? castsDetails?.name : <Skeleton width={150}/> }</h1>
+                    <h2 className="bold biography">{!isLoading? "Biography": <Skeleton width={150}/> }  </h2>
+                    {isLoading ?    <Skeleton count={4} height={20}/>   : 
                     castsDetails?.biography === "" ? <p>No biography available.</p> :       
                     <h2>{truncateString(castsDetails?.biography,300)}</h2>    }
                     
