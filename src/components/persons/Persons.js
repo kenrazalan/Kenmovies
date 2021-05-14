@@ -52,14 +52,14 @@ function Persons() {
                 </div>
           
             <div className="person">
-                {  isLoading ? <Skeleton width={300} height={400}/> :
+                {  isLoading && castsDetails? <Skeleton width={300} height={400}/> :
                     <img src={`https://image.tmdb.org/t/p/w1280${castsDetails?.profile_path}`} alt="profile"/>
                 }
                  
                 <div className="person-info">
-                    <h1>{!isLoading? castsDetails?.name : <Skeleton width={150}/> }</h1>
-                    <h2 className="bold biography">{!isLoading? "Biography": <Skeleton width={150}/> }  </h2>
-                    {isLoading ?    <Skeleton count={4} height={20}/>   : 
+                    <h1>{!isLoading && castsDetails? castsDetails?.name : <Skeleton width={150}/> }</h1>
+                    <h2 className="bold biography">{!isLoading && castsDetails? "Biography": <Skeleton width={150}/> }  </h2>
+                    {isLoading && castsDetails?    <Skeleton count={4} height={20}/>   : 
                     castsDetails?.biography === "" ? <p>No biography available.</p> :       
                     <h2>{truncateString(castsDetails?.biography,300)}</h2>    }
                     
