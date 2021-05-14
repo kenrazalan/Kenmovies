@@ -50,7 +50,7 @@ export const PreviewWrapper  = styled.div`
         box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
         object-fit: cover;
         z-index: 4;
-        padding-right: 50px;
+       // padding-right: 50px;
         margin: auto;
     }
     .preview-banner-info{
@@ -58,7 +58,7 @@ export const PreviewWrapper  = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center; 
-         
+        padding-left: 50px;
     }
     .preview-banner-info h1{
         font-size: 28px;
@@ -111,6 +111,7 @@ export const PreviewWrapper  = styled.div`
         .preview-banner-info{
         align-items: center;
         text-align: center;
+        padding: 0;
         }
     }
     @media screen and (max-width: 480px) {

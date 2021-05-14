@@ -5,6 +5,7 @@ import { fetchCastsDetails } from '../../redux'
 import { truncateString } from '../landingpage/truncateString'
 import { PersonsWrapper } from './style'
 import background from './../../images/background.jpg'
+import { motion } from 'framer-motion'
 
 
 function Persons() {
@@ -15,11 +16,26 @@ function Persons() {
         dispatch(fetchCastsDetails(id))
     },[dispatch,id])
     const castsDetails = useSelector(state => state.castsDetails.items) 
-
     const history = useHistory()
+    const previewVariants={
+        hidden:{
+            opacity:0
+        },
+        visible:{
+            opacity:1
+        },
+        exit:{
+            opacity:0
+        }
+    }
+    
     return (
         <PersonsWrapper>
-        <div className="persons-container"
+        <motion.div className="persons-container"
+                variants={previewVariants}
+                initial='hidden'
+                animate='visible'
+                exit='exit'
         style={{
             backgroundImage: background && `url(${background})`
         }} 
@@ -28,9 +44,9 @@ function Persons() {
             {castsDetails &&
             <>
             <div className="view">
-                <div className="back">
-                    <div className="btn pointer">
-                      <button className="back-button pointer bold" onClick={()=>history.goBack()}>Back</button>
+                <div className="back" >
+                    <div className="btn pointer" onClick={()=>history.goBack()}>
+                      <button className="back-button pointer bold" >Back</button>
                     </div>  
                 </div>
           
@@ -48,7 +64,7 @@ function Persons() {
             </div>
             </>
             }          
-        </div>
+        </motion.div>
         </PersonsWrapper>
     )
 }
