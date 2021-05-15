@@ -43,6 +43,27 @@ export const NavWrapper = styled.div`
     li{
         margin: 0 1rem;
         cursor: pointer;
+        
+    }
+    .dropdown-menu{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgb(17, 17, 17);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dropdown-menu li{
+        font-size: 30px;
+        padding: 10px 0;
+        font-weight: bold;
+    }
+    .dropdown-menu .nav-search{
+        //width: 100%;
+        margin: 20px 0 0 0;
     }
 
     .nav-search{
@@ -82,12 +103,17 @@ export const NavWrapper = styled.div`
 	    background-color: #fff;
         border: none;
     }
-    @media screen and (max-width: 860px) {
-        .links-container{
+    .menu-icon{
+        margin-right: 20px;
+        padding: 15px;
+    }
+    @media screen and (min-width: 860px) {
+        .menu-icon{
             display: none;
         }
-
-        li{
+    }
+    @media screen and (max-width: 860px) {
+        .links-container{
             display: none;
         }
     }
@@ -100,9 +126,7 @@ export const NavWrapper = styled.div`
         
     }
     .nav-search,.nav-search input,.search-btn{
-        max-width: 150px;
-        min-height: unset;
-        max-height: 30px;
+
     }
 }
 
