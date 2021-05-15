@@ -16,12 +16,15 @@ function SearchResults() {
     },[dispatch,query])
     const searchResults = useSelector(state => state.search.items)
     const isLoading = useSelector(state => state.search.loading)
-    console.log(isLoading)
+    console.log( searchResults.results?.length)
     return (
         <SearchWrapper>
         {searchResults?.results &&  
         <div className="search-container">
-        <h1 className="search-header">Search results for "{query}"</h1>
+        <h1 className="search-header">
+            {searchResults && searchResults?.results.length !== 0 ? `Search results for "${query}"` :  `No result found for "${query}" `}
+            
+        </h1>
             <div className="search-results">
                 
                 { searchResults.results.map(result=>{

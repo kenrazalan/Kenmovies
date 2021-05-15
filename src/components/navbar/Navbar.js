@@ -19,7 +19,11 @@ function Navbar() {
     },[])
 
     const handleSearch = () => {
-		history.push(`/search/${value}`);
+        if(value.length !== 0){
+            history.push(`/search/${value}`);
+        }
+        
+		
 	};
 
     const scrolled=()=>{
