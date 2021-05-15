@@ -6,6 +6,7 @@ import upcomingsReducer from './upcomings/upcomingReducer'
 import previewDetailsReducer from './previewDetails/PreviewDetailsReducer'
 import castsReducer from './casts/castsReducer'
 import castsDetailsReducer from './castsDetails/castsDetailsReducer'
+import searchReducer from './search/searchReducer'
 
 const rootReducer = combineReducers({
     topRated : topRatedReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     upcomings: upcomingsReducer,
     previewDetails: previewDetailsReducer,
     casts: castsReducer,
-    castsDetails: castsDetailsReducer
+    castsDetails: castsDetailsReducer,
+    search: searchReducer
 })
 
 export default  rootReducer

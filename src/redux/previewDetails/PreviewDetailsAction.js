@@ -1,4 +1,4 @@
-import {FETCH_PREVIEW_DETAILS, FETCH_PREVIEW_DETAILS_REQUEST, FETCH_PREVIEW_DETAILS_SUCCESS} from './PreviewDetailsType'
+import {FETCH_PREVIEW_DETAILS_REQUEST, FETCH_PREVIEW_DETAILS_SUCCESS} from './PreviewDetailsType'
 import axios from 'axios'
 
 // export const fetchPreviewDetails = (type,id) => async dispatch =>{
