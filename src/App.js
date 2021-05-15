@@ -9,6 +9,7 @@ import Preview from './components/preview/Preview';
 import { BrowserRouter } from 'react-router-dom';
 import Persons from './components/persons/Persons';
 import {AnimatePresence} from 'framer-motion'
+import SearchResults from './components/searchresults/SearchResults';
 require('dotenv').config()
 
 WebFont.load({
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/person/:id">
             <Persons/>
+          </Route>
+          <Route exact path="/search/:query">
+            <SearchResults />
           </Route>
            
         </Switch>
