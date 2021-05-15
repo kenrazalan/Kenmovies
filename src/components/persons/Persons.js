@@ -7,6 +7,7 @@ import { PersonsWrapper } from './style'
 import background from './../../images/background.jpg'
 import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
+import profile from '../../images/nophoto.png'
 
 function Persons() {
     const dispatch = useDispatch();
@@ -52,7 +53,7 @@ function Persons() {
           
             <div className="person">
                 {  isLoading && castsDetails? <Skeleton width={300} height={400}/> :
-                    <img src={`https://image.tmdb.org/t/p/w1280${castsDetails?.profile_path}`} alt="profile"/>
+                    <img src={castsDetails.profile_path === null? profile : `https://image.tmdb.org/t/p/w1280${castsDetails?.profile_path}`} alt="profile"/>
                 }
                  
                 <div className="person-info">

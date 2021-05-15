@@ -7,6 +7,7 @@ import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
 import {motion} from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
+import photo from '../../images/nophoto.png'
 
 function Preview() {
     const history = useHistory()
@@ -57,7 +58,8 @@ function Preview() {
           
             <div className="preview-banner">
                  {!isLoading && previewDetails?
-                     <img src={`https://image.tmdb.org/t/p/w1280${previewDetails?.poster_path}`} alt="poster"/>
+                     <img 
+                     src={previewDetails.poster_path === null ? photo :`https://image.tmdb.org/t/p/w1280${previewDetails?.poster_path}`} alt="poster"/>
             
             : <Skeleton width={300} height={400}/>
                  }

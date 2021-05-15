@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { fetchSearch } from '../../redux'
 import {SearchWrapper} from './style'
+import photo from '../../images/nophoto.png'
 
 function SearchResults() {
     const dispatch = useDispatch();
@@ -27,7 +28,8 @@ function SearchResults() {
                     return(
                         <Link to={`/preview/${result?.id}/movie`}>
                         <div className="result pointer">
-                            {!isLoading? <img src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`} 
+                            {!isLoading? <img 
+                            src={result.poster_path === null ? photo : `https://image.tmdb.org/t/p/w500/${result.poster_path}`} 
                             alt={result.original_title} key={result.id}/> 
                             : <Skeleton width={180} height={270}/>}
                             
