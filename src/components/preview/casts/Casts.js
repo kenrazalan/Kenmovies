@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 import { CastsWrapper } from './style'
 
 function Casts({casts}) {
-    const history = useHistory();
     return (
         <CastsWrapper>
         <div className="casts-container">

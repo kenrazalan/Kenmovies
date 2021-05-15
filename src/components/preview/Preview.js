@@ -6,7 +6,7 @@ import { truncateString } from '../landingpage/truncateString';
 import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
 import {motion} from 'framer-motion'
-import Skeleton,{SkeletonTheme} from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 
 function Preview() {
     const history = useHistory()
@@ -37,7 +37,6 @@ function Preview() {
 
     return (
         <>
-        <SkeletonTheme color="#202020" highlightColor="#444">
         <PreviewWrapper>
         <motion.div className="preview-container"
                 variants={previewVariants}
@@ -93,8 +92,7 @@ function Preview() {
             </>
                          
         </motion.div>
-        </PreviewWrapper>
-        </SkeletonTheme>                   
+        </PreviewWrapper>              
         <Casts casts={casts?.cast}/>
         </>
     )

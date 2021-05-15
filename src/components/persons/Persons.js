@@ -6,7 +6,7 @@ import { truncateString } from '../landingpage/truncateString'
 import { PersonsWrapper } from './style'
 import background from './../../images/background.jpg'
 import { motion } from 'framer-motion'
-import Skeleton,{ SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 
 function Persons() {
     const dispatch = useDispatch();
@@ -32,7 +32,6 @@ function Persons() {
         }
     }
     return (
-        <SkeletonTheme color="#202020" highlightColor="#444">
         <PersonsWrapper>
         <motion.div className="persons-container"
                 variants={previewVariants}
@@ -71,7 +70,6 @@ function Persons() {
                       
         </motion.div>
         </PersonsWrapper>
-        </SkeletonTheme>
     )
 }
 

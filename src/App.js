@@ -10,6 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Persons from './components/persons/Persons';
 import {AnimatePresence} from 'framer-motion'
 import SearchResults from './components/searchresults/SearchResults';
+import { SkeletonTheme } from 'react-loading-skeleton';
 require('dotenv').config()
 
 WebFont.load({
@@ -25,6 +26,7 @@ function App() {
         <BrowserRouter>  
         <Navbar/>
         <AnimatePresence exitBeforeEnter>
+        <SkeletonTheme color="#202020" highlightColor="#444">
         <Switch>
           <Route exact path="/">
             <LandingPage/>
@@ -40,6 +42,7 @@ function App() {
           </Route>
            
         </Switch>
+        </SkeletonTheme>
         </AnimatePresence>
         </BrowserRouter>
         </Provider>
