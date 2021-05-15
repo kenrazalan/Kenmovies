@@ -7,7 +7,9 @@ import { NavWrapper } from './style';
 
 function Navbar() {
     const [showNavBg,setShowNavBg]=useState(false)
+    const [value,setValue] = useState("")
     const history = useHistory();
+
     useEffect(()=>{
         if(window.scrollY >= 30){
             setShowNavBg(true)
@@ -15,6 +17,10 @@ function Navbar() {
         window.addEventListener('scroll',scrolled)
         return ()=>window.removeEventListener
     },[])
+
+    const handleSearch = () => {
+		history.push(`/search/${value}`);
+	};
 
     const scrolled=()=>{
         if(window.scrollY >= 30){
@@ -37,7 +43,12 @@ function Navbar() {
 
             <div className="links-container">
                 <Links/>
+                <form className="nav-search">
+                    <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) } />
+                    <button className="search-btn" onClick={handleSearch}></button>
+                </form>
             </div>
+
    
             </nav>
             
