@@ -23,11 +23,12 @@ function App() {
   return (
     <div className="App">
         <Provider store={store}>
-        <BrowserRouter>  
+        <BrowserRouter>        
         <Navbar/>
         <AnimatePresence exitBeforeEnter>
         <SkeletonTheme color="#202020" highlightColor="#444">
         <Switch>
+          <div className="main-container">
           <Route exact path="/">
             <LandingPage/>
           </Route>
@@ -40,7 +41,7 @@ function App() {
           <Route exact path="/search/:query">
             <SearchResults />
           </Route>
-           
+          </div>
         </Switch>
         </SkeletonTheme>
         </AnimatePresence>

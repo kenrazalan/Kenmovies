@@ -2,6 +2,12 @@
 .App {
   height: 200vh;
 }
+.main-container{
+  max-width: 1200px;
+	margin: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 html {
   font-size: 14px;
