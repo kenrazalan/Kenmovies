@@ -4,6 +4,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {fetchNetflixOriginals} from '../../redux'
 import {truncateString} from './truncateString'
 import {BannerContainer} from './style'
+import Skeleton from 'react-loading-skeleton'
 
 
 
@@ -16,8 +17,8 @@ function Banner() {
     const history = useHistory();
     const [banner,setBanner] = useState()
     const netflixOriginals = useSelector(state => state.netflixOriginals.items) 
-    console.log(netflixOriginals)
-    
+    const isLoading = useSelector(state => state.netflixOriginals.loading)
+
  
     return (
         <BannerContainer>
@@ -30,14 +31,21 @@ function Banner() {
             <div className="banner">
                 <div className="banner-info">
                 <div className="title-rating">
-                        <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
-                        <span className="rating"><span className="icon-star">★ </span> 
-                        {netflixOriginals?.results[banner]?.vote_average} Rating</span>
+                    {!isLoading ? <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
+                    : <Skeleton height={30}/>}
+                    {!isLoading ? <span className="rating"><span className="icon-star">★ </span> 
+                        {netflixOriginals?.results[banner]?.vote_average} Rating</span> 
+                    :<Skeleton width={120} /> }   
                 </div>
-                <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
-                <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
+                {!isLoading ? <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
+                :<Skeleton width={70} height={30}/>}
+                {!isLoading ? <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
+                : <Skeleton count={3} width={300}/>}
+                
                 </div>
-                <img src={`https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.poster_path}`} alt="test"/>
+                {!isLoading ? <img src={`https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.poster_path}`} alt="test"/> 
+                : <Skeleton width={300} height={400}/>}
+                
             </div>
            
             </>
