@@ -26,9 +26,10 @@ export const fetchNetflixOriginalsSuccess= (data) => {
 }
 
 export const fetchNetflixOriginals = () =>{
+    const random =  Math.floor(Math.random()* 19)
     return (dispatch) =>{
         dispatch(fetchNetflixOriginalsRequest())
-        axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&with_networks=213`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&page=${random}&sort_by=popularity.desc`)
         .then(res=>{
             const users = res.data
             dispatch(fetchNetflixOriginalsSuccess(users))
