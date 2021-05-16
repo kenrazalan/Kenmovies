@@ -31,6 +31,12 @@ export const NavWrapper = styled.div`
         align-items: center;
         flex-grow: 1;
     }
+    .links-container li {
+        font-size: 16px;
+    }
+    .links-container ul {
+        margin-left: 30px;
+    }
     ul{
         display: flex;
         justify-content: space-between;

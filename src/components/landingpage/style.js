@@ -30,7 +30,7 @@ export const BannerContainer  = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding:  0rem 4.8rem;
+        padding:  4rem 4.8rem;
     }
     @media screen and (max-width: 790px) {
 
@@ -65,8 +65,8 @@ export const BannerContainer  = styled.div`
 
     }
     img{
-        height: 400px;
-        width: 300px;
+        height: 350px;
+        width: 250px;
         border-radius: 6px;
         box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
         object-fit: cover;

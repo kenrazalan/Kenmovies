@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const CastsWrapper  = styled.div`
     .casts-container{
         width:100%;
+        min-height: 70vh;
         padding:  0rem 4.8rem;
     }
     .casts{

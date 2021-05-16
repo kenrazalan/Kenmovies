@@ -10,7 +10,7 @@ function Casts({casts}) {
         <CastsWrapper>
         <div className="casts-container">
         <h1 className="title">Top Billed Casts</h1>
-        
+        {casts?.length === 0 ? <h1 style={{textAlign: "center",marginTop:"90px"}}>No casts found</h1> : 
             <div className="casts">
                  {casts?.slice(0,12).map(cast=> 
                 <Link to={`/person/${cast?.id}`} > 
@@ -23,7 +23,7 @@ function Casts({casts}) {
                 </div>
                 </Link> 
                 )}
-            </div>
+            </div>}
         
         </div>
         </CastsWrapper>
