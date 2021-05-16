@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BannerContainer  = styled.div`
     .banner-container{
         width:100%;
-        min-height:100vh;
+        //min-height:100vh;
         margin: 0 auto;
         background-size: cover;
         background-position: center;

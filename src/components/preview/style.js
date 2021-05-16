@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const PreviewWrapper  = styled.div`
     .preview-container{
         width:100%;
-        min-height:100vh;
+        //min-height:100vh;
         height: auto;
         margin: 0 auto;
         background-size: cover;
