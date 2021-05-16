@@ -16,7 +16,7 @@ function Movies({results,title}) {
                 {results.results.slice(0,10).map(res=>{
                     return( 
                 <>
-                    <div className="movie pointer" onClick={()=>history.push(`preview/${res?.id}/movie`)}>
+                    <div className="movie pointer" onClick={()=>history.push(`/preview/${res?.id}/movie`)}>
                       <div className="image-container">
                         <div style={{
                             background: res.vote_average > 7 ? "#3bb33b" : "#aaa"
