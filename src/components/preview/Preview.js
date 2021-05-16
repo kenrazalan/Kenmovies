@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { useHistory, useParams } from 'react-router'
-import {fetchPreviewDetails,fetchCasts, fetchCastsDetails} from '../../redux'
+import {fetchPreviewDetails,fetchCasts, fetchCastsDetails, fetchSimilarMovies} from '../../redux'
 import { truncateString } from '../landingpage/truncateString';
 import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
 import {motion} from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import photo from '../../images/nophoto.png'
+import Movies from '../movies/Movies'
 
 function Preview() {
     const history = useHistory()
@@ -17,12 +18,15 @@ function Preview() {
     useEffect(() => {
         window.scrollTo(0,0)
         dispatch(fetchPreviewDetails(type,id))
-        dispatch(fetchCasts(type,id))    
+        dispatch(fetchCasts(type,id))  
+        dispatch(fetchSimilarMovies(type,id))  
         }, [dispatch,type,id])
 
     const previewDetails = useSelector(state => state.previewDetails.items) 
-    const isLoading = useSelector(state => state.previewDetails.loading) 
+    const isLoading = useSelector(state => state.previewDetails.loading)
+    const similarMovies = useSelector(state => state.similarMovies.items) 
     const casts = useSelector(state => state.casts.items) 
+
     const lastIndex = previewDetails?.genres.length-1;
     const previewVariants={
         hidden:{
@@ -96,6 +100,7 @@ function Preview() {
         </motion.div>
         </PreviewWrapper>              
         <Casts casts={casts?.cast}/>
+        <Movies results={similarMovies} title="Similar Movies"/>
         </>
     )
 }

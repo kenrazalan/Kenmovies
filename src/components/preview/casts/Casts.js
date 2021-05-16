@@ -13,7 +13,7 @@ function Casts({casts}) {
         {casts?.length === 0 ? <h1 style={{textAlign: "center",marginTop:"90px"}}>No casts found</h1> : 
             <div className="casts">
                  {casts?.slice(0,12).map(cast=> 
-                <Link to={`/person/${cast?.id}`} > 
+                <Link to={`/person/${cast?.id}`} key={cast?.id}> 
                  <div className="cast-container">
                  <img className="cast-img"
                   src={cast.profile_path === null? profile :`https://image.tmdb.org/t/p/w500/${cast.profile_path}`} 
