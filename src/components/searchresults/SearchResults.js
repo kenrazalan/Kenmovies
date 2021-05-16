@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { fetchSearch } from '../../redux'
 import {SearchWrapper} from './style'
-import photo from '../../images/nophoto.png'
+import photo from '../../images/noimage.png'
 
 function SearchResults() {
     const dispatch = useDispatch();

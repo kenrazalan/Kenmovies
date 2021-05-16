@@ -7,7 +7,7 @@ import { PersonsWrapper } from './style'
 import background from './../../images/background.jpg'
 import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
-import profile from '../../images/nophoto.png'
+import profile from '../../images/noimage.png'
 
 function Persons() {
     const dispatch = useDispatch();
