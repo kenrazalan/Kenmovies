@@ -37,7 +37,7 @@ function Banner() {
                         {netflixOriginals?.results[banner]?.vote_average} Rating</span> 
                     :<Skeleton width={120} /> }   
                 </div>
-                {!isLoading ? <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/tv`)}>View</button>
+                {!isLoading ? <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/movie`)}>View</button>
                 :<Skeleton width={70} height={30}/>}
                 {!isLoading ? <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
                 : <Skeleton count={3} width={300}/>}
