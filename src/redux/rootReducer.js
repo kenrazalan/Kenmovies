@@ -7,6 +7,7 @@ import previewDetailsReducer from './previewDetails/PreviewDetailsReducer'
 import castsReducer from './casts/castsReducer'
 import castsDetailsReducer from './castsDetails/castsDetailsReducer'
 import searchReducer from './search/searchReducer'
+import similarMoviesReducer from './similarMovies/similarMoviesReducer'
 
 const rootReducer = combineReducers({
     topRated : topRatedReducer,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     previewDetails: previewDetailsReducer,
     casts: castsReducer,
     castsDetails: castsDetailsReducer,
-    search: searchReducer
+    search: searchReducer,
+    similarMovies: similarMoviesReducer
 })
 
 export default  rootReducer
