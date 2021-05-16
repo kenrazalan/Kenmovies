@@ -89,7 +89,7 @@ function Preview() {
                     <h1 className="overview"> {!isLoading ? "Overview" : <Skeleton width={150}/>}</h1> 
                       { !isLoading && previewDetails?          
                     <h2>
-                      {  truncateString(previewDetails?.overview,300)}
+                      {  truncateString(previewDetails?.overview,1100)}
                     </h2>  : <Skeleton count={3} width={300}/>}
                 </div>
                

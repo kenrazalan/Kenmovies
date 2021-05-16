@@ -61,7 +61,7 @@ function Persons() {
                     <h2 className="bold biography">{!isLoading && castsDetails? "Biography": <Skeleton width={150}/> }  </h2>
                     {isLoading && castsDetails?    <Skeleton count={4} height={20}/>   : 
                     castsDetails?.biography === "" ? <p>No biography available.</p> :       
-                    <h2>{truncateString(castsDetails?.biography,300)}</h2>    }
+                    <h2>{truncateString(castsDetails?.biography,1100)}</h2>    }
                     
                 </div>
                
