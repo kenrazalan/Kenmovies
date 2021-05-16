@@ -7,7 +7,7 @@ import Casts from './casts/Casts';
 import { PreviewWrapper } from './style';
 import {motion} from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
-import photo from '../../images/nophoto.png'
+import photo from '../../images/noimage.png'
 import Movies from '../movies/Movies'
 
 function Preview() {
