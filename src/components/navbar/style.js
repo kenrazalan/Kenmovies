@@ -8,6 +8,8 @@ export const NavWrapper = styled.div`
         justify-content: center;
     }
     nav{
+        max-width: 1360px;
+        margin: 0 auto;
         width:100%;
         height:70px;
         position: fixed;
