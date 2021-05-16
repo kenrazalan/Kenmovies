@@ -36,8 +36,8 @@ function LandingPage() {
         animate='visible'
         exit={{x:'-100%'}} >
             <Banner/>
-            <Movies results={upcomings} title="Upcoming Movies"/>
-            <Movies results={topRated} title="Top Rated Movies"/>
+            <Movies results={upcomings?.results} title="Upcoming Movies"/>
+            <Movies results={topRated?.results} title="Top Rated Movies"/>
         </motion.div>
     )
 }

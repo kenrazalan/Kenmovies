@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router'
-import { fetchCastsDetails } from '../../redux'
+import { fetchCastsDetails, fetchKnownFor } from '../../redux'
 import { truncateString } from '../landingpage/truncateString'
 import { PersonsWrapper } from './style'
 import background from './../../images/background.jpg'
 import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import profile from '../../images/noimage.png'
+import Movies from '../movies/Movies'
 
 function Persons() {
     const dispatch = useDispatch();
@@ -15,11 +16,13 @@ function Persons() {
     useEffect(()=>{
         window.scrollTo(0,0)
         dispatch(fetchCastsDetails(id)) 
-        // dispatch(fetchCastsDetails(id))
+        dispatch(fetchKnownFor(id))
     },[dispatch,id])
 
     const castsDetails = useSelector(state => state.castsDetails.items) 
     const isLoading = useSelector(state => state.castsDetails.loading) 
+    const knownFor = useSelector(state => state.knownFor.items)
+
     const history = useHistory()
     const previewVariants={
         hidden:{
@@ -32,7 +35,7 @@ function Persons() {
             opacity:0
         }
     }
-    return (
+    return (<>
         <PersonsWrapper>
         <motion.div className="persons-container"
                 variants={previewVariants}
@@ -42,8 +45,6 @@ function Persons() {
         style={{
             backgroundImage: background && `url(${background})`
         }}>
-
-            <>
             <div className="view">
                 <div className="back" >
                     <div className="btn pointer" onClick={()=>history.goBack()}>
@@ -61,16 +62,18 @@ function Persons() {
                     <h2 className="bold biography">{!isLoading && castsDetails? "Biography": <Skeleton width={150}/> }  </h2>
                     {isLoading && castsDetails?    <Skeleton count={4} height={20}/>   : 
                     castsDetails?.biography === "" ? <p>No biography available.</p> :       
-                    <h2>{truncateString(castsDetails?.biography,1100)}</h2>    }
+                    <p>{truncateString(castsDetails?.biography,11000)}</p>    }
                     
                 </div>
                
             </div>
-            </div>
-            </>
-                      
+            
+            </div>              
         </motion.div>
-        </PersonsWrapper>
+          </PersonsWrapper>
+          <Movies results={knownFor?.cast} title="Also known for "/>
+          </>
+      
     )
 }
 

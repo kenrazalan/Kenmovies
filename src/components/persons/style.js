@@ -4,7 +4,7 @@ export const PersonsWrapper  = styled.div`
     .persons-container{
         width:100%;
         padding:  0rem 4.8rem;
-        min-height:100vh;
+        min-height:680px;
         height: auto;
         margin: 0 auto;
         background-size: cover;
@@ -28,7 +28,7 @@ export const PersonsWrapper  = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding:  0rem 0rem 12rem ;
+        padding:  0rem 0rem 6rem ;
     }
 
     .person{
