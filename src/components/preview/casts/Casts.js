@@ -5,7 +5,6 @@ import { CastsWrapper } from './style'
 import profile from '../../../images/noimage.png'
 
 function Casts({casts}) {
-    console.log(casts)
     return (
         <CastsWrapper>
         <div className="casts-container">
