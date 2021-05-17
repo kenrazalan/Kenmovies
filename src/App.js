@@ -12,6 +12,7 @@ import {AnimatePresence} from 'framer-motion'
 import SearchResults from './components/searchresults/SearchResults';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Footer from './components/footer/Footer';
+import Upcoming from './page/Upcoming';
 require('dotenv').config()
 
 WebFont.load({
@@ -41,6 +42,9 @@ function App() {
               </Route>
               <Route exact path="/search/:query">
                 <SearchResults />
+              </Route>
+              <Route exact path="/upcoming">
+                <Upcoming />
               </Route>
           </div>
         </Switch>

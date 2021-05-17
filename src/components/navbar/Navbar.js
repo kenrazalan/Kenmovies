@@ -81,7 +81,7 @@ const Links2 =()=>{
     const history = useHistory();
    return[
          <li onClick={()=>history.push("/")}>Home</li>,
-         <li>Upcoming</li>,
+         <li onClick={()=>history.push("/upcoming")}>Upcoming</li>,
          <li>Discover</li>,
          <li>Trending</li>,
          <li>People</li>,
@@ -93,7 +93,7 @@ const Links =({toggleMenu})=>{
      const history = useHistory();
     return[
           <li onClick={()=>{history.push("/");toggleMenu()}}>Home</li>,
-          <li>Upcoming</li>,
+          <li onClick={()=>{history.push("/upcoming");toggleMenu()}}>Upcoming</li>,
           <li>Discover</li>,
           <li>Trending</li>,
           <li>People</li>,
