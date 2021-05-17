@@ -11,6 +11,7 @@ import Persons from './components/persons/Persons';
 import {AnimatePresence} from 'framer-motion'
 import SearchResults from './components/searchresults/SearchResults';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import Footer from './components/footer/Footer';
 require('dotenv').config()
 
 WebFont.load({
@@ -29,22 +30,23 @@ function App() {
         <SkeletonTheme color="#202020" highlightColor="#444">
         <Switch>
           <div className="main-container">
-          <Route exact path="/">
-            <LandingPage/>
-          </Route>
-          <Route exact path="/preview/:id/:type">
-            <Preview/>
-          </Route>
-          <Route exact path="/person/:id">
-            <Persons/>
-          </Route>
-          <Route exact path="/search/:query">
-            <SearchResults />
-          </Route>
+              <Route exact path="/">
+                <LandingPage/>
+              </Route>
+              <Route exact path="/preview/:id/:type">
+                <Preview/>
+              </Route>
+              <Route exact path="/person/:id">
+                <Persons/>
+              </Route>
+              <Route exact path="/search/:query">
+                <SearchResults />
+              </Route>
           </div>
         </Switch>
         </SkeletonTheme>
         </AnimatePresence>
+        <Footer/>
         </BrowserRouter>
         </Provider>
     </div>

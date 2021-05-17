@@ -57,14 +57,14 @@ function Navbar() {
                  <Links2/>   
                 </ul> 
                 <form className="nav-search">
-                    <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) } />
+                    <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) }  placeholder="Search Movies" />
                     <button className="search-btn" onClick={handleSearch}></button>
                 </form>
             </div>
 
             { !showMenu && <div className="dropdown-menu">
                 <form className="nav-search">
-                    <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) } />
+                    <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) } placeholder="Search Movies" />
                     <button className="search-btn" onClick={handleSearch}></button>
                 </form>
                 <Links toggleMenu={toggleMenu}/>
