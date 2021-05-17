@@ -1,18 +1,25 @@
-
-import {FETCH_UPCOMINGS} from './upcomingsType'
+import {FETCH_UPCOMINGS_REQUEST,FETCH_UPCOMINGS_SUCCESS} from './upcomingsType'
 
 const initialState = {
-    items: []
+    item:{},
+    loading: false
 }
 
-const upcomingsReducers =  (state=initialState,action)=>{
+
+const upcomingsReducer = (state=initialState,action) => {
     switch(action.type){
-        case FETCH_UPCOMINGS:
+        case FETCH_UPCOMINGS_REQUEST:
             return {
+                ...state,
+                loading:true
+            }
+        case FETCH_UPCOMINGS_SUCCESS:
+            return {
+                loading: false,
                 items:action.payload
             }
         default:
             return state
     }
 }
-export default upcomingsReducers
+export default upcomingsReducer

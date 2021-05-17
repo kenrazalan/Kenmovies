@@ -25,7 +25,7 @@ function Upcoming() {
         <div style={{marginTop:"100px"}}>
             <Movies results={upcomings?.results} title="Upcoming Movies"/>
             <Pagination 
-                activePage={upcomings?.page}
+                activePage={currentPage}
                 itemsCountPerPage={1}
                 pageRangeDisplayed={10}
                 totalItemsCount={upcomings?.total_pages}
