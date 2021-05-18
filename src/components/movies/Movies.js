@@ -10,7 +10,7 @@ function Movies({results,title,isLoading}) {
         <div className="movies-container">
             <h1>{title}</h1>
             <div className="movies"> 
-                {results?.slice(0,10).map(res=>{
+                {results?.map(res=>{
                     return( 
 
                 <MovieCard movie={res} isLoading={isLoading}/>)}
