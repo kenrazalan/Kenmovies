@@ -11,6 +11,7 @@ function Upcoming() {
     },[dispatch])
     
     const upcomings = useSelector(state => state.upcomings.items) 
+    const isLoading = useSelector(state => state.upcomings.loading)
     const [currentPage,setCurrentPage] = useState(upcomings?.page)
     console.log(upcomings)
 
@@ -23,7 +24,7 @@ function Upcoming() {
     }
     return (
         <div style={{marginTop:"100px"}}>
-            <Movies results={upcomings?.results} title="Upcoming Movies"/>
+            <Movies results={upcomings?.results} isLoading={isLoading} title="Upcoming Movies"/>
             <Pagination 
                 activePage={currentPage}
                 itemsCountPerPage={1}
