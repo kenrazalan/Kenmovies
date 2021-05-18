@@ -81,7 +81,7 @@ const Links2 =()=>{
    return[
          <NavLink exact={true} activeClassName="active" to={'/'} >Home</NavLink>,
          <NavLink activeClassName="active" to={'/upcoming'} >Upcoming</NavLink>,
-         <NavLink activeClassName="active" to={'/discover'} >Discover</NavLink>,
+         <NavLink activeClassName="active" to={'/popular'} >Popular</NavLink>,
          <NavLink activeClassName="active" to={'/people'} >People</NavLink>,
          <NavLink activeClassName="active" to={'/genres'} >Genres</NavLink>
       ]
@@ -91,7 +91,7 @@ const Links =({toggleMenu})=>{
     return[
           <NavLink exact={true} activeClassName="active" to={'/'} onClick={()=>toggleMenu()}>Home</NavLink>,
           <NavLink activeClassName="active" to={'/upcoming'} onClick={()=>toggleMenu()}>Upcoming</NavLink>,
-          <NavLink activeClassName="active" to={'/discover'} onClick={()=>toggleMenu()}>Discover</NavLink>,
+          <NavLink activeClassName="active" to={'/popular'} onClick={()=>toggleMenu()}>Popular</NavLink>,
           <NavLink activeClassName="active" to={'/people'} onClick={()=>toggleMenu()}>People</NavLink>,
           <NavLink activeClassName="active" to={'/genres'} onClick={()=>toggleMenu()}>Genre</NavLink>,
        ]

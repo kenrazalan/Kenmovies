@@ -16,6 +16,7 @@ import Upcoming from './page/Upcoming';
 import Trending from './page/Trending';
 import TopRated from './page/TopRated';
 import People from './page/People';
+import Popular from './page/Popular';
 require('dotenv').config()
 
 WebFont.load({
@@ -57,6 +58,9 @@ function App() {
               </Route>
               <Route exact path="/people">
                 <People />
+              </Route>
+              <Route exact path="/popular">
+                <Popular />
               </Route>
           </div>
         </Switch>
