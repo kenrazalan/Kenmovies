@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Movies from '../movies//Movies'
 import Banner from './Banner'
 import {useSelector,useDispatch} from 'react-redux'
-import {fetchUpcomings,fetchTopRated} from '../../redux'
+import {fetchUpcomings,fetchTopRated, fetchTrending} from '../../redux'
 import { motion } from 'framer-motion'
 
 function LandingPage() {
@@ -10,9 +10,12 @@ function LandingPage() {
     useEffect(()=>{
         dispatch(fetchUpcomings())
         dispatch(fetchTopRated())
+        dispatch(fetchTrending())
     },[dispatch])
     const upcomings = useSelector(state => state.upcomings.items) 
     const topRated = useSelector(state => state.topRated.items) 
+    const trending = useSelector(state => state.trending.items)
+
     const landingPageVariants={
         hidden:{
             x:'-100vw'
@@ -36,7 +39,7 @@ function LandingPage() {
         animate='visible'
         exit={{x:'-100%'}} >
             <Banner/>
-            <Movies results={upcomings?.results} title="Upcoming Movies"/>
+            <Movies results={trending?.results} title="Trending Movies"/>
             <Movies results={topRated?.results} title="Top Rated Movies"/>
         </motion.div>
     )
