@@ -14,6 +14,7 @@ import { SkeletonTheme } from 'react-loading-skeleton';
 import Footer from './components/footer/Footer';
 import Upcoming from './page/Upcoming';
 import Trending from './page/Trending';
+import TopRated from './page/TopRated';
 require('dotenv').config()
 
 WebFont.load({
@@ -49,6 +50,9 @@ function App() {
               </Route>
               <Route exact path="/trending">
                 <Trending />
+              </Route>
+              <Route exact path="/toprated">
+                <TopRated />
               </Route>
           </div>
         </Switch>
