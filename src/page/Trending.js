@@ -7,6 +7,7 @@ import {fetchTrending} from '../redux'
 function Trending() {
     const dispatch = useDispatch();
     useEffect(()=>{
+        window.scrollTo(0,0)
         dispatch(fetchTrending())
     },[dispatch])
     
