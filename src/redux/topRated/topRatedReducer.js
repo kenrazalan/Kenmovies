@@ -1,13 +1,21 @@
-import {FETCH_TOP_RATED} from './topRatedType'
+import {FETCH_TOP_RATED_REQUEST, FETCH_TOP_RATED_SUCCESS} from './topRatedType'
 
 const initialState = {
-    item:{}
+    item:{},
+    loading: false
 }
 
-const topRatedReducer =  (state=initialState,action)=>{
+
+const topRatedReducer = (state=initialState,action) => {
     switch(action.type){
-        case FETCH_TOP_RATED:
+        case FETCH_TOP_RATED_REQUEST:
             return {
+                ...state,
+                loading:true
+            }
+        case FETCH_TOP_RATED_SUCCESS:
+            return {
+                loading: false,
                 items:action.payload
             }
         default:
