@@ -14,10 +14,10 @@ export const fetchTrendingSuccess= (data) => {
     }
 }
 
-export const fetchTrending = () =>{
+export const fetchTrending = (page=1) =>{
     return (dispatch) =>{
         dispatch(fetchTrendingRequest())
-        axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=1`)
+        axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`)
         .then(res=>{
             const data = res.data
             dispatch(fetchTrendingSuccess(data))

@@ -13,6 +13,7 @@ import SearchResults from './components/searchresults/SearchResults';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Footer from './components/footer/Footer';
 import Upcoming from './page/Upcoming';
+import Trending from './page/Trending';
 require('dotenv').config()
 
 WebFont.load({
@@ -45,6 +46,9 @@ function App() {
               </Route>
               <Route exact path="/upcoming">
                 <Upcoming />
+              </Route>
+              <Route exact path="/trending">
+                <Trending />
               </Route>
           </div>
         </Switch>
