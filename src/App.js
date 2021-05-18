@@ -15,6 +15,7 @@ import Footer from './components/footer/Footer';
 import Upcoming from './page/Upcoming';
 import Trending from './page/Trending';
 import TopRated from './page/TopRated';
+import People from './page/People';
 require('dotenv').config()
 
 WebFont.load({
@@ -54,13 +55,17 @@ function App() {
               <Route exact path="/toprated">
                 <TopRated />
               </Route>
+              <Route exact path="/people">
+                <People />
+              </Route>
           </div>
         </Switch>
         </SkeletonTheme>
         </AnimatePresence>
-        <Footer/>
+    
         </BrowserRouter>
         </Provider>
+        <Footer/>
     </div>
   );
 }
