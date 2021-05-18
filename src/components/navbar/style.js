@@ -33,7 +33,7 @@ export const NavWrapper = styled.div`
         align-items: center;
         flex-grow: 1;
     }
-    .links-container li {
+    .links-container a {
         font-size: 16px;
     }
     .links-container ul {
@@ -48,7 +48,7 @@ export const NavWrapper = styled.div`
         padding: 2rem;
 
     }
-    li{
+    a{
         margin: 0 1rem;
         cursor: pointer;
         
@@ -64,7 +64,7 @@ export const NavWrapper = styled.div`
         flex-direction: column;
         align-items: center;
     }
-    .dropdown-menu li{
+    .dropdown-menu a{
         font-size: 30px;
         padding: 10px 0;
         font-weight: bold;
@@ -114,6 +114,9 @@ export const NavWrapper = styled.div`
     .menu-icon{
         margin-right: 20px;
         padding: 15px;
+    }
+    .active{
+        color: #3bb33b !important;
     }
     @media screen and (min-width: 860px) {
         .menu-icon{

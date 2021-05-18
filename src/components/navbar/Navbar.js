@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, NavLink, useHistory } from 'react-router-dom'
 import { NavWrapper } from './style';
 
 
@@ -78,26 +78,22 @@ function Navbar() {
     )
 }
 const Links2 =()=>{
-    const history = useHistory();
    return[
-         <li onClick={()=>history.push("/")}>Home</li>,
-         <li onClick={()=>history.push("/upcoming")}>Upcoming</li>,
-         <li>Discover</li>,
-         <li>Trending</li>,
-         <li>People</li>,
-         <li>Genres</li>
+         <NavLink exact={true} activeClassName="active" to={'/'} >Home</NavLink>,
+         <NavLink activeClassName="active" to={'/upcoming'} >Upcoming</NavLink>,
+         <NavLink activeClassName="active" to={'/discover'} >Discover</NavLink>,
+         <NavLink activeClassName="active" to={'/people'} >People</NavLink>,
+         <NavLink activeClassName="active" to={'/genres'} >Genres</NavLink>
       ]
    }  
 
 const Links =({toggleMenu})=>{
-     const history = useHistory();
     return[
-          <li onClick={()=>{history.push("/");toggleMenu()}}>Home</li>,
-          <li onClick={()=>{history.push("/upcoming");toggleMenu()}}>Upcoming</li>,
-          <li>Discover</li>,
-          <li>Trending</li>,
-          <li>People</li>,
-          <li>Genres</li>
+          <NavLink exact={true} activeClassName="active" to={'/'} onClick={()=>toggleMenu()}>Home</NavLink>,
+          <NavLink activeClassName="active" to={'/upcoming'} onClick={()=>toggleMenu()}>Upcoming</NavLink>,
+          <NavLink activeClassName="active" to={'/discover'} onClick={()=>toggleMenu()}>Discover</NavLink>,
+          <NavLink activeClassName="active" to={'/people'} onClick={()=>toggleMenu()}>People</NavLink>,
+          <NavLink activeClassName="active" to={'/genres'} onClick={()=>toggleMenu()}>Genre</NavLink>,
        ]
     }  
     
