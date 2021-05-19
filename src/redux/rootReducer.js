@@ -12,6 +12,7 @@ import knownForReducer from './knownFor/knownForReducer'
 import trendingReducer from './trending/TrendingReducer'
 import peopleReducer from './people/PeopleReducer'
 import popularReducer from './popular/PopularReducer'
+import genresReducer from './genres/GenresReducer'
 
 const rootReducer = combineReducers({
     topRated : topRatedReducer,
@@ -25,7 +26,8 @@ const rootReducer = combineReducers({
     knownFor: knownForReducer,
     trending: trendingReducer,
     people: peopleReducer,
-    popular: popularReducer
+    popular: popularReducer,
+    genres: genresReducer
 })
 
 export default  rootReducer
