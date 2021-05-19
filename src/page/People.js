@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import Movies from '../components/movies/Movies'
 import Pagination from '../components/pagination/Pagination';
 import Peoples from '../components/peoples/Peoples';
 import {fetchPeople} from '../redux'

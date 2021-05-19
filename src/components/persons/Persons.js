@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router'
 import { fetchCastsDetails, fetchKnownFor } from '../../redux'
 import { truncateString } from '../landingpage/truncateString'
 import { PersonsWrapper } from './style'
-import background from './../../images/background.jpg'
+import image from './../../images/background.jpg'
 import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import profile from '../../images/noimage.png'
@@ -13,6 +13,10 @@ import Movies from '../movies/Movies'
 function Persons() {
     const dispatch = useDispatch();
     const {id} = useParams()
+    const [background,setBackground] =useState(null)
+    useEffect(() => {
+     setBackground(image)
+      }, []);
     useEffect(()=>{
         window.scrollTo(0,0)
         dispatch(fetchCastsDetails(id)) 

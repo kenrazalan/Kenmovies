@@ -8,11 +8,13 @@ function Pagination({
     onChange,
     itemsCountPerPage,
     pageRangeDisplayed,
-    totalItemsCount
+    totalItemsCount,
   }) {
     return (
         <PaginationWrapper>
         <div className="pagination-container">
+      {activePage && 
+      <>
       <p>Page {activePage}/{totalPage > 1000 ? 1000 : totalPage}</p>
       <PaginationJs
         activePage={activePage}
@@ -27,6 +29,8 @@ function Pagination({
         prevPageText="Prev"
         totalItemsCount={totalItemsCount > 1000 ? 1000 : totalItemsCount}
       />
+      </>
+  }
     </div>
     </PaginationWrapper>
     )
