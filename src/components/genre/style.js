@@ -45,7 +45,32 @@ export const GenreWrapper  = styled.div`
     .image-container{
         //position: relative;
     }
-    h1{
+    p{  
+        font-size: 2rem;
         z-index: 2;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 1020px) {
+        .genres{           
+            grid-template-columns: repeat(3,1fr);         
+        }
+    }
+    @media screen and (max-width: 876px) {
+        .genres{           
+            grid-template-columns: repeat(2,1fr);         
+        }
+        .genres-container{
+            padding:0;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .imahe{           
+           width:160px ;
+           height: 70px;
+        }
+        p{
+            font-size:1.1rem;
+            
+        }
     }
 `

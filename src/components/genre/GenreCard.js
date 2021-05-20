@@ -13,7 +13,7 @@ function GenreCard({genreType,id}) {
                     <div className="imahe" style={{
                         background: `url(../${genreName}.jpg) 0% 0% / cover no-repeat`
                     }}>
-                        <h1>{genreType}</h1>
+                        <p>{genreType}</p>
                     </div>
                         
                         {/* <img 
