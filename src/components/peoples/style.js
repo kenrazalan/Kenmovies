@@ -51,6 +51,10 @@ export const PeopleWrapper  = styled.div`
         .people{
             max-width: 80%;
         }
+        h1{
+        padding: 0rem 0 0 2rem !important;
+        text-align: center;
+    }
     }
     img{
         

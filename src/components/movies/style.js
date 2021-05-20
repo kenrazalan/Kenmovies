@@ -52,6 +52,10 @@ export const UpcommingsWrapper  = styled.div`
         .movie{
             max-width: 80%;
         }
+        h1{
+        padding: 0rem 0 0 2rem !important;
+        text-align: center;
+        }
     }
     img{
         

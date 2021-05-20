@@ -5,6 +5,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {fetchUpcomings,fetchTopRated, fetchTrending} from '../../redux'
 import { motion } from 'framer-motion'
 import Button from '../button/Button'
+import GenreCard from '../genre/GenreCard'
 
 
 function LandingPage() {
@@ -40,10 +41,12 @@ function LandingPage() {
         animate='visible'
         exit={{x:'-100%'}} >
             <Banner/>
+            <div style={{marginTop:"1.5rem"}}>
             <Movies results={trending?.results} title="Trending Movies"/>
             <Button link="trending" text="View All Trending Movies"/>
             <Movies results={topRated?.results} title="Top Rated Movies"/>
             <Button link="toprated" text="View All Top Rated Movies"/>
+            </div>
         </motion.div>
     )
 }

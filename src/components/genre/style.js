@@ -45,6 +45,9 @@ export const GenreWrapper  = styled.div`
     .image-container{
         //position: relative;
     }
+    h1{
+        padding: 2rem 0 0 2rem;
+    }
     p{  
         font-size: 2rem;
         z-index: 2;
@@ -68,6 +71,10 @@ export const GenreWrapper  = styled.div`
            width:160px ;
            height: 70px;
         }
+        h1{
+            padding: 0rem 0 0 2rem;
+            text-align: center;
+    }
         p{
             font-size:1.1rem;
             
