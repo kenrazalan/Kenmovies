@@ -19,7 +19,8 @@ function Navbar() {
         return ()=>window.removeEventListener
     },[])
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault()
         if(value.length !== 0){
             history.push(`/search/${value}`);
             setShowMenu(true)

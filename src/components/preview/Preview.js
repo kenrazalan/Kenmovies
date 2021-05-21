@@ -100,10 +100,11 @@ function Preview() {
         </motion.div>
         </PreviewWrapper>              
         <Casts casts={casts?.cast}/>
+        <div style={{marginTop: "30px"}}>
         {similarMovies?.results.length !== 0  
             && 
         <Movies results={similarMovies?.results} title="Similar Movies"/> }
-        
+        </div>
         </>
     )
 }
