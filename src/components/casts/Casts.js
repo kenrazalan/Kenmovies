@@ -1,8 +1,8 @@
 import React from 'react'
-import { useHistory } from 'react-router'
 import {Link} from 'react-router-dom'
 import { CastsWrapper } from './style'
-import profile from '../../../images/noimage.png'
+import profile from '../../images/noimage.png'
+
 
 function Casts({casts}) {
     return (

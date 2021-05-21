@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import Movies from '../movies//Movies'
-import Banner from './Banner'
+import Movies from '../components/movies/Movies'
+import Banner from '../components/landingpage/Banner'
 import {useSelector,useDispatch} from 'react-redux'
-import {fetchUpcomings,fetchTopRated, fetchTrending} from '../../redux'
+import {fetchUpcomings,fetchTopRated, fetchTrending} from '../redux'
 import { motion } from 'framer-motion'
-import Button from '../button/Button'
-import GenreCard from '../genre/GenreCard'
+import Button from '../components/button/Button'
+
 
 
 function LandingPage() {

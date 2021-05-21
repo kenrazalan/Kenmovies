@@ -3,7 +3,7 @@ import {Provider} from 'react-redux'
 import Navbar from './components/navbar/Navbar';
 import store from './redux/store'
 import WebFont from 'webfontloader';
-import LandingPage from './components/landingpage/LandingPage';
+
 import { Route, Switch } from 'react-router';
 import Preview from './components/preview/Preview';
 import { BrowserRouter } from 'react-router-dom';
@@ -19,6 +19,7 @@ import People from './page/People';
 import Popular from './page/Popular';
 import Genres from './page/Genres';
 import SelectedGenre from './components/selectedgenre/SelectedGenre';
+import LandingPage from './page/LandingPage';
 require('dotenv').config()
 
 WebFont.load({

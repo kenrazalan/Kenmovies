@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import { useHistory, useParams } from 'react-router'
 import {fetchPreviewDetails,fetchCasts, fetchCastsDetails, fetchSimilarMovies} from '../../redux'
 import { truncateString } from '../landingpage/truncateString';
-import Casts from './casts/Casts';
+import Casts from '../casts/Casts';
 import { PreviewWrapper } from './style';
 import {motion} from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
