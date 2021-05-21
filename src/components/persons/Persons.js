@@ -13,10 +13,7 @@ import Movies from '../movies/Movies'
 function Persons() {
     const dispatch = useDispatch();
     const {id} = useParams()
-    const [background,setBackground] =useState(null)
-    useEffect(() => {
-     setBackground(image)
-      }, []);
+
     useEffect(()=>{
         window.scrollTo(0,0)
         dispatch(fetchCastsDetails(id)) 

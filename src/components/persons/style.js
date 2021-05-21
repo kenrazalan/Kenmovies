@@ -12,6 +12,7 @@ export const PersonsWrapper  = styled.div`
         object-fit: contain;
         position: relative; 
         padding: 0px 10%; 
+        background-color: #171c28;
     }
     .persons-container::before{      
         content:'';
