@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { Link, NavLink, useHistory } from 'react-router-dom'
 import { NavWrapper } from './style';
+import Fade from 'react-reveal/Fade';
 
 
 
@@ -50,7 +51,7 @@ function Navbar() {
                 }}>
                
                 <h1 className="pointer" onClick={()=>{history.push(`/`);setShowMenu(true)}}>KEN MOVIES</h1>
-            <i onClick={toggleMenu} className="menu-icon fas fa-bars"></i>
+            <i style={{float: "right"}} onClick={toggleMenu} className="menu-icon fas fa-bars"></i>
 
 
             <div className="links-container">
@@ -62,14 +63,17 @@ function Navbar() {
                     <button className="search-btn" onClick={handleSearch}></button>
                 </form>
             </div>
-
-            { !showMenu && <div className="dropdown-menu">
+            
+            { !showMenu &&
+            <Fade top> 
+             <div className="dropdown-menu">
                 <form className="nav-search">
                     <input type="text" value={value} onChange={ ((e)=>setValue(e.target.value) ) } placeholder="Search Movies" />
                     <button className="search-btn" onClick={handleSearch}></button>
                 </form>
+                
                 <Links toggleMenu={toggleMenu}/>
-            </div>}
+            </div></Fade>}
    
             </nav>
             

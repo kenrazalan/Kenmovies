@@ -74,6 +74,9 @@ export const NavWrapper = styled.div`
         //width: 100%;
         margin: 20px 0 0 0;
     }
+    .react-reveal{
+        animation-duration: 300ms !important;
+    }
 
     .nav-search{
     background-color: #fff;
