@@ -45,10 +45,10 @@ function Persons() {
                 variants={previewVariants}
                 initial='hidden'
                 animate='visible'
-                exit='exit'
-        style={{
+                exit='exit'>
+        {/* style={{
             backgroundImage: background && `url(${background})`
-        }}>
+        }} */}
             <div className="view">
                 <div className="back" >
                     <div className="btn pointer" onClick={()=>history.goBack()}>

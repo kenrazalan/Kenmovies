@@ -93,7 +93,7 @@ const Links =({toggleMenu})=>{
           <NavLink activeClassName="active" to={'/upcoming'} onClick={()=>toggleMenu()}>Upcoming</NavLink>,
           <NavLink activeClassName="active" to={'/popular'} onClick={()=>toggleMenu()}>Popular</NavLink>,
           <NavLink activeClassName="active" to={'/people'} onClick={()=>toggleMenu()}>People</NavLink>,
-          <NavLink activeClassName="active" to={'/genres'} onClick={()=>toggleMenu()}>Genre</NavLink>,
+          <NavLink activeClassName="active" to={'/genres'} onClick={()=>toggleMenu()}>Genres</NavLink>,
        ]
     }  
     

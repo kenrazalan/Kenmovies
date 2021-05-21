@@ -51,6 +51,7 @@ export const NavWrapper = styled.div`
     a{
         margin: 0 1rem;
         cursor: pointer;
+        font-weight: bold;
         
     }
     .dropdown-menu{
