@@ -18,6 +18,7 @@ import TopRated from './page/TopRated';
 import People from './page/People';
 import Popular from './page/Popular';
 import Genres from './page/Genres';
+import SelectedGenre from './components/selectedgenre/SelectedGenre';
 require('dotenv').config()
 
 WebFont.load({
@@ -65,6 +66,9 @@ function App() {
               </Route>
               <Route exact path="/genres">
                 <Genres />
+              </Route>
+              <Route exact path="/genres/:genreType/:genresId">
+                  <SelectedGenre/>
               </Route>
           </div>
         </Switch>
