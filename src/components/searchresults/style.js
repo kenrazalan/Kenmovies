@@ -24,6 +24,10 @@ export const SearchWrapper= styled.div`
     }
     .search-header{
         margin-top: 150px;
+        text-align: center;
+    }
+    h1, .total{
+        text-align: center;
     }
     img{
         border-radius: 6px;

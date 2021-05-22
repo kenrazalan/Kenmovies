@@ -13,6 +13,7 @@ function SearchResults() {
     const {query} = useParams();
 
     useEffect(()=>{
+        window.scrollTo(0,0)
         dispatch(fetchSearch(query))
     },[dispatch,query])
     const searchResults = useSelector(state => state.search.items)
@@ -34,9 +35,9 @@ function SearchResults() {
        {searchResults && searchResults?.results.length !== 0 ?   
        <>
         <h1 className="search-header"> {`Search results`  } </h1>
-        <p>{`${searchResults.total_results.toLocaleString()} total results for "${query}"`}</p>
+        <p className="total">{`${searchResults.total_results.toLocaleString()} total results for "${query}"`}</p>
        </>  
-        : <h1>{`No result found for "${query}"`}</h1> } 
+        : <h1 className="search-header">{`No result found for "${query}"`}</h1> } 
 
             <div className="search-results">
                 
