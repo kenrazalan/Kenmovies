@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import profile from '../../images/noimage.png'
 import Movies from '../movies/Movies'
+import Back from '../back/Back'
 
 function Persons() {
     const dispatch = useDispatch();
@@ -47,11 +48,7 @@ function Persons() {
             backgroundImage: background && `url(${background})`
         }} */}
             <div className="view">
-                <div className="back" >
-                    <div className="btn pointer" onClick={()=>history.goBack()}>
-                      <button className="back-button pointer bold" >Back</button>
-                    </div>  
-                </div>
+            <Back/>
           
             <div className="person">
                 {  isLoading && castsDetails? <Skeleton width={300} height={400}/> :

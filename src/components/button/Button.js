@@ -13,6 +13,7 @@ const ButtonContainer  = styled.div`
         padding: 1rem 2rem;
         font-weight: 700;
         color: #fff;
+        cursor: pointer;
     }
 `
 

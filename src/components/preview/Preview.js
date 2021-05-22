@@ -9,6 +9,7 @@ import {motion} from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import photo from '../../images/noimage.png'
 import Movies from '../movies/Movies'
+import Back from '../back/Back';
 
 function Preview() {
     const history = useHistory()
@@ -54,11 +55,7 @@ function Preview() {
                        
             <>
             <div className="view">
-            <div className="back">
-                    <div className="btn pointer" onClick={()=>history.goBack()}>
-                      <button className="back-button pointer bold" >Back</button>
-                    </div>  
-                </div>
+            <Back/>
           
             <div className="preview-banner">
                  {!isLoading && previewDetails?
@@ -99,7 +96,7 @@ function Preview() {
                          
         </motion.div>
         </PreviewWrapper>              
-        <Casts casts={casts?.cast}/>
+        <Casts movieId={id} casts={casts?.cast}/>
         <div style={{marginTop: "30px"}}>
         {similarMovies?.results.length !== 0  
             && 

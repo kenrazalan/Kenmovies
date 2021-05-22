@@ -2,9 +2,10 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { CastsWrapper } from './style'
 import profile from '../../images/noimage.png'
+import Button from '../button/Button'
 
 
-function Casts({casts}) {
+function Casts({casts,movieId}) {
     return (
         <CastsWrapper>
         <div className="casts-container">
@@ -23,7 +24,8 @@ function Casts({casts}) {
                 </Link> 
                 )}
             </div>}
-        
+            {casts?.length >= 12 && <Button link={`preview/${movieId}/movie/allcasts`} text="View All Casts"/>}
+            
         </div>
         </CastsWrapper>
     )
