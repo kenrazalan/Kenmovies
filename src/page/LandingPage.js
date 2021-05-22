@@ -11,6 +11,7 @@ import Button from '../components/button/Button'
 function LandingPage() {
     const dispatch = useDispatch();
     useEffect(()=>{
+        window.scrollTo(0,0)
         dispatch(fetchUpcomings())
         dispatch(fetchTopRated())
         dispatch(fetchTrending())
