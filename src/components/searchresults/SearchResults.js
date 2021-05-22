@@ -31,10 +31,13 @@ function SearchResults() {
         <SearchWrapper>
         {searchResults?.results &&  
         <div className="search-container">
-        <h1 className="search-header">
-            {searchResults && searchResults?.results.length !== 0 ? `Search results for "${query}"` :  `No result found for "${query}" `}
-            
-        </h1>
+       {searchResults && searchResults?.results.length !== 0 ?   
+       <>
+        <h1 className="search-header"> {`Search results`  } </h1>
+        <p>{`${searchResults.total_results.toLocaleString()} total results for "${query}"`}</p>
+       </>  
+        : <h1>{`No result found for "${query}"`}</h1> } 
+
             <div className="search-results">
                 
                 { searchResults.results.map(result=>{
