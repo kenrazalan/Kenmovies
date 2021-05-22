@@ -20,6 +20,8 @@ import Popular from './page/Popular';
 import Genres from './page/Genres';
 import SelectedGenre from './components/selectedgenre/SelectedGenre';
 import LandingPage from './page/LandingPage';
+import AllCasts from './components/allCasts/AllCasts';
+
 require('dotenv').config()
 
 WebFont.load({
@@ -43,6 +45,9 @@ function App() {
               </Route>
               <Route exact path="/preview/:id/:type">
                 <Preview/>
+              </Route>
+              <Route exact path="/preview/:id/:type/allcasts">
+                <AllCasts/>
               </Route>
               <Route exact path="/person/:id">
                 <Persons/>
