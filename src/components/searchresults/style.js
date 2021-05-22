@@ -4,7 +4,8 @@ export const SearchWrapper= styled.div`
     .search-container{
         width:100%;
         padding:  0rem 4.8rem;
-        height:100vh;
+        //height:100vh;
+        //margin-bottom: 50px;
         //position: relative; 
         //padding: 0px 10%; 
     }

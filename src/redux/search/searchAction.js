@@ -24,10 +24,10 @@ import axios from 'axios'
         }
     }
     
-    export const fetchSearch = (query) =>{
+    export const fetchSearch = (query,page) =>{
         return (dispatch) =>{
             dispatch(fetchSearchRequest())
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`)
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}&page=${page}`)
             .then(res=>{
                 const search = res.data
                 dispatch(fetchSearchSuccess(search))

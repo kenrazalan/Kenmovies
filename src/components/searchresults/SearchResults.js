@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import {useSelector,useDispatch} from 'react-redux'
 import { useHistory, useParams } from 'react-router'
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { fetchSearch } from '../../redux'
 import {SearchWrapper} from './style'
 import photo from '../../images/noimage.png'
+import Pagination from '../pagination/Pagination'
 
 function SearchResults() {
     const dispatch = useDispatch();
@@ -16,6 +17,15 @@ function SearchResults() {
     },[dispatch,query])
     const searchResults = useSelector(state => state.search.items)
     const isLoading = useSelector(state => state.search.loading)
+    const [currentPage,setCurrentPage] = useState(searchResults?.page)
+
+    const handleChange =(page) =>{
+        if (searchResults?.page !== page) {
+            dispatch(fetchSearch(query,page));
+            setCurrentPage(page)
+            window.scrollTo(0,0)
+          }
+    }
     console.log( searchResults.results?.length)
     return (
         <SearchWrapper>
@@ -45,8 +55,20 @@ function SearchResults() {
                         </Link>
                     )
                 })}
+
             </div>
-        </div>}
+            {searchResults.results.length >10 &&
+            <Pagination 
+            activePage={searchResults?.page}
+            itemsCountPerPage={1}
+            pageRangeDisplayed={10}
+            totalItemsCount={searchResults?.total_pages}
+            totalPage={searchResults?.total_pages}
+            onChange={handleChange}
+            />}
+        </div>
+        
+        }
         </SearchWrapper>
     )
 }
