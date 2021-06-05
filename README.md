@@ -21,6 +21,7 @@ To run the app in the development mode.\
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+![screenshot - 1](https://github.com/kenrazalan/Kenmovies/blob/4c32cd760be33f39117898956cabb604d88683ec/screenshot/Home.png)
 
 
 
