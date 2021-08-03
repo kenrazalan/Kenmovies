@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router'
 import { fetchCastsDetails, fetchKnownFor } from '../../redux'
 import { truncateString } from '../landingpage/truncateString'
 import { PersonsWrapper } from './style'
-import image from './../../images/background.jpg'
+import image from './../../images/polygon.svg'
 import { motion } from 'framer-motion'
 import Skeleton from 'react-loading-skeleton'
 import profile from '../../images/noimage.png'
@@ -43,14 +43,14 @@ function Persons() {
                 variants={previewVariants}
                 initial='hidden'
                 animate='visible'
-                exit='exit'>
-        {/* style={{
-            backgroundImage: background && `url(${background})`
-        }} */}
+                exit='exit'
+        style={{
+            backgroundImage: image && `url(${image})`
+        }}>
             <div className="view">
             <Back/>
           
-            <div className="person">
+            <div className="person" >
                 {  isLoading && castsDetails? <Skeleton width={300} height={400}/> :
                     <img src={castsDetails.profile_path === null? profile : `https://image.tmdb.org/t/p/w1280${castsDetails?.profile_path}`} alt="profile"/>
                 }

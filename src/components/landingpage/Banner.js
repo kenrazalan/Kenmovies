@@ -29,22 +29,25 @@ function Banner() {
             {netflixOriginals.results &&
             <>
             <div className="banner">
+
+            {!isLoading ? <img src={`https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.poster_path}`} alt="test"/> 
+                : <Skeleton width={300} height={400}/>}
+
                 <div className="banner-info">
-                <div className="title-rating">
+               
                     {!isLoading ? <h1>{netflixOriginals?.results[banner]?.name || netflixOriginals?.results[banner]?.title}</h1>
                     : <Skeleton height={30}/>}
                     {!isLoading ? <span className="rating"><span className="icon-star">★ </span> 
                         {netflixOriginals?.results[banner]?.vote_average} Rating</span> 
                     :<Skeleton width={120} /> }   
-                </div>
+                
                 {!isLoading ? <button onClick={()=>history.push(`preview/${netflixOriginals.results[banner].id}/movie`)}>View</button>
                 :<Skeleton width={70} height={30}/>}
-                {!isLoading ? <h2>{truncateString(netflixOriginals.results[banner]?.overview,160)}</h2>
+                {!isLoading ? <h2>{truncateString(netflixOriginals.results[banner]?.overview, 300 )}</h2>
                 : <Skeleton count={3} width={300}/>}
                 
                 </div>
-                {!isLoading ? <img src={`https://image.tmdb.org/t/p/w1280/${netflixOriginals.results[banner]?.poster_path}`} alt="test"/> 
-                : <Skeleton width={300} height={400}/>}
+
                 
             </div>
            

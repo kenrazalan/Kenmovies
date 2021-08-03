@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BannerContainer  = styled.div`
     .banner-container{
         width:100%;
-        min-height:600px;
+        min-height:100vh;
         margin: 0 auto;
         background-size: cover;
         background-position: center;
@@ -22,56 +22,6 @@ export const BannerContainer  = styled.div`
         //background-image: linear-gradient(360deg,#111,rgba(17, 17, 17, 0.8),transparent);
         left:0;
     }
-    .banner{
-        height: 100%;
-        width: 100%;
-        position: relative;
-        color:#fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding:  4rem 4.8rem;
-    }
-    @media screen and (max-width: 790px) {
-
-        img{
-             height: 300px !important;
-             width: 200px !important;
-             
-        }
-        .banner{
-            padding: 0;
-            flex-direction: column-reverse; 
-            justify-content: center !important;    
-        }
-        .banner-info{
-          align-items: center;
-          text-align: center;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        h2{
-            font-size: 1rem !important;          
-        }
-        h1{
-            font-size: 19px !important;
-        }
-        .title-rating{
-            padding-top: 12px;
-        }
-        .rating{
-            padding: 0 !important;
-        }
-
-    }
-    img{
-        height: 350px;
-        width: 250px;
-        border-radius: 6px;
-        box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
-        object-fit: cover;
-        
-    }
     .banner .banner-info {
         z-index: 4;
         max-width: 360px;
@@ -79,10 +29,13 @@ export const BannerContainer  = styled.div`
         //height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;     
+        justify-content: center;    
+        justify-self: center; 
+        align-items: center;
     }
     .banner .banner-info h1{
-        font-size: 28px;
+        text-align: center;
+        font-size: 25px;
         padding: 10px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     }
@@ -118,8 +71,60 @@ export const BannerContainer  = styled.div`
         color: yellow;
     }
     .rating{
-        font-size: 1.3rem;
-        padding: 10px 0 5px 0;
+        font-size: 1rem;
+        padding: 0;
+    }
+        .banner {
+            width: 100%;
+            min-height: 80vh;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            gap: 0px 10px;
+            grid-auto-flow: column;
+            grid-template-areas:
+                "."
+                ".";
+            }
+
+    img{
+        height: auto;
+        width: 200px;
+        border-radius: 6px;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+        object-fit: cover;
+        z-index: 99;
+        justify-self: center;
+    }
+
+    @media (min-width: 1024px) { 
+        img{
+            height: 400px;
+            width: 300px;
+        }
+        .banner .banner-info{
+            align-items: unset;
+        }
+        .banner .banner-info h1{
+            text-align: unset;
+        }
+        .banner {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-auto-flow: row;
+            grid-template-areas:
+                ". .";
+            }
+
+     }
+    @media screen and (min-width: 1536px) {
+        img{
+            height: auto;
+            width: 350px;
+        }
     }
 
 

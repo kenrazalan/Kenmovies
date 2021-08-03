@@ -64,6 +64,9 @@ export const GenreWrapper  = styled.div`
             grid-template-columns: 1fr 1fr 1fr;
             gap: 30px 30px;
         }
+        .imahe{
+        height: 200px;
+        }
         .genres-container{
             padding:  0rem 40px;
         }

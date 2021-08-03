@@ -12,7 +12,7 @@ function GenreCard({genreType,id}) {
                 <div className="image-container">
                     <Link to={`/genres/${genreLink}/${id}`}>
                     <div className="imahe" style={{
-                        background: `url(../${genreName}.jpg) 0% 0% / cover no-repeat`
+                        background: `url(../${genreName}.png) 0% 0% / cover no-repeat`
                     }}>
                         <p>{genreType}</p>
                     </div>
