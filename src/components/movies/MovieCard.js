@@ -21,7 +21,7 @@ function MovieCard({movie,isLoading}) {
                     : <Skeleton height={326}/>}
                 </div>
                         {!isLoading ? <>
-                                 <p className="title bold">{movie.original_title}</p>
+                                 <p className="title">{movie.original_title}</p>
                                  <p className="release-date">{movie.release_date}</p> 
                                  </>
                                  :

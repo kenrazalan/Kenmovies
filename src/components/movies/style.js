@@ -22,6 +22,30 @@ export const UpcommingsWrapper  = styled.div`
        width: 100%;
        
     }
+    p {
+         align-self: flex-start;
+         font-size: 11px;
+     }
+    .release-date{
+        margin-bottom: 15px;
+        //font-size: 11px;
+    }
+
+    h3{
+        //padding-left: 2rem
+        text-align: center;
+    }
+    .rating{
+        position: absolute;
+        top: 5px;
+        left: -5px;
+        background:#3bb33b;
+        //text-align: center;
+        min-width: 30px;
+        width: fit-content;
+        padding: 1px 5px;
+        border-radius: 3px;
+    }
 
     .movies {
         margin-top: 30px;
@@ -38,6 +62,7 @@ export const UpcommingsWrapper  = styled.div`
             ". .";
 
     }
+
     @media (min-width: 768px) { 
         .movies{ 
             grid-template-columns: 1fr 1fr 1fr;
@@ -56,6 +81,9 @@ export const UpcommingsWrapper  = styled.div`
         .movies{ 
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
+        p {
+            font-size: 14px;
+        }
      }
      @media (min-width: 1536px) { 
         .movies{ 
@@ -64,23 +92,4 @@ export const UpcommingsWrapper  = styled.div`
      }
 
 
-    .release-date{
-        margin-bottom: 15px;
-    }
-
-    h3{
-        //padding-left: 2rem
-        text-align: center;
-    }
-    .rating{
-        position: absolute;
-        top: 5px;
-        left: -5px;
-        background:#3bb33b;
-        text-align: center;
-        min-width: 30px;
-        width: fit-content;
-        padding: 1px 5px;
-        border-radius: 3px;
-    }
     `
