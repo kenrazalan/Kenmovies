@@ -2,23 +2,50 @@ import styled from 'styled-components'
 
 export const CastsWrapper  = styled.div`
     .casts-container{
-        width:100%;
+        //width:100%;
         min-height: 33vh;
-        padding:  0rem 4.8rem;
+        padding:  0rem 10px;
     }
-    .casts{
+    .casts {
         margin-top: 50px;
-        padding-bottom: 50px;
-        width: 100%;
         display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(6,1fr);
-        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". ."
+            ". .";
+
     }
-    .cast-img{
+
+    @media (min-width: 768px) { 
+        .casts{ 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px 30px;
+        }
+        .casts-container{
+            padding:  0rem 40px;
+        }
         
+     }
+     @media (min-width: 1024px) { 
+        .casts{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+     }
+     @media (min-width: 1536px) { 
+        .casts{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+     }
+    .cast-img{
+        width: 100%;
         border-radius: 6px;
-        height: 230px;
+        height: auto;
     }
     .character{
         font-size: 11px;
@@ -26,7 +53,7 @@ export const CastsWrapper  = styled.div`
     .title{
         padding: 2rem 0 0 2rem;
     }
-    @media screen and (max-width: 1100px) {
+    /* @media screen and (max-width: 1100px) {
         .casts{           
             grid-template-columns: repeat(5,1fr);         
         }
@@ -52,5 +79,5 @@ export const CastsWrapper  = styled.div`
             
             padding: 0;
         }
-    }
+    } */
     `

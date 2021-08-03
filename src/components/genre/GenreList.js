@@ -8,7 +8,7 @@ function GenreList({title,genres}) {
     return (
         <GenreWrapper>
             <div className="genres-container">
-            <h1>{title}</h1>
+            <h3>{title}</h3>
             <div className="genres">
                 {genres?.map(genre => {
                     return(

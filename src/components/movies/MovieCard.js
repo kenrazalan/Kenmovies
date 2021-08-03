@@ -9,7 +9,7 @@ function MovieCard({movie,isLoading}) {
         <div className="movie pointer" onClick={()=>history.push(`/preview/${movie?.id}/movie`)}>
                 <div className="image-container">
                     {!isLoading ? 
-                    <>
+                    <div>
                         <div style={{
                             background: movie.vote_average > 7 ? "#3bb33b" : "#aaa"
                         }} className="rating">{movie.vote_average}
@@ -17,8 +17,8 @@ function MovieCard({movie,isLoading}) {
                         <img 
                         src={movie.poster_path === null? profile :`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                         alt={movie.original_title} key={movie.id}/>
-                    </>
-                    : <Skeleton width={170} height={270} />}
+                    </div>
+                    : <Skeleton height={326}/>}
                 </div>
                         {!isLoading ? <>
                                  <p className="title bold">{movie.original_title}</p>
@@ -28,7 +28,7 @@ function MovieCard({movie,isLoading}) {
                         <Skeleton width={170} count={2}/>
                         }
                         
-        </div>
+                </div>
     )
 }
 

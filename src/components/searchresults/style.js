@@ -2,23 +2,45 @@ import styled from 'styled-components'
 
 export const SearchWrapper= styled.div`
     .search-container{
-        width:100%;
-        padding:  0rem 4.8rem;
-        //height:100vh;
-        //margin-bottom: 50px;
-        //position: relative; 
-        //padding: 0px 10%; 
+        padding:  0rem 10px;
+
     }
-    .search-results{
-        padding-bottom: 60px !important;
+
+    .search-results {
         margin-top: 50px;
-        width:100%;
         display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(5,1fr);
-        grid-gap: 1.2rem;
-       // background: green;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". ."
+            ". .";
+
     }
+    @media (min-width: 768px) { 
+        .search-results{ 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px 30px;
+        }
+        .search-container{
+            padding:  0rem 40px;
+        }
+        
+     }
+     @media (min-width: 1024px) { 
+        .search-results{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+     }
+     @media (min-width: 1536px) { 
+        .search-results{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+     }
     .result{
         margin-bottom: 20px;
     }
@@ -30,10 +52,11 @@ export const SearchWrapper= styled.div`
         text-align: center;
     }
     img{
+        width: 100%;
         border-radius: 6px;
-        height: 270px;
+        height: auto;
     }
-    @media screen and (max-width: 976px) {
+    /* @media screen and (max-width: 976px) {
         .search-results{           
             grid-template-columns: repeat(4,1fr);         
         }
@@ -76,6 +99,6 @@ export const SearchWrapper= styled.div`
         img{
             height: 210px !important;
         }
-    }
+    } */
     
 `

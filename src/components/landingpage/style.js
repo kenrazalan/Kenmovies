@@ -107,6 +107,8 @@ export const BannerContainer  = styled.div`
         border-radius: 5px;
         cursor: pointer;
         margin:20px 0px;
+        font-family: 'Oswald', sans-serif;
+        
     }
     .banner .banner-info button:hover{
         background-color: #e6e6e6;

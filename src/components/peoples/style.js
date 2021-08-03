@@ -3,10 +3,25 @@ import styled from 'styled-components'
 export const PeopleWrapper  = styled.div`
     .peoples-container{    
 
-        width:100%;
-        padding:  0rem 4.8rem;
+        //width:100%;
+        padding:  0rem 10px;
     }
-    .peoples{      
+    img{
+        width: 100%;
+        border-radius: 6px;
+        height: auto;
+    }
+    .image-container{
+       position: relative; 
+       width: 100%;
+    }
+    .people{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    /* .peoples{      
         padding-bottom: 50px;
         margin-top: 50px;
         width:100%;
@@ -14,58 +29,54 @@ export const PeopleWrapper  = styled.div`
         justify-items: center;
         grid-template-columns: repeat(5,1fr);
         grid-gap: 1.2rem;
+    } */
+    .peoples {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". ."
+            ". .";
+
     }
+       @media (min-width: 768px) { 
+        .peoples{ 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px 30px;
+        }
+        .peoples-container{
+            padding:  0rem 40px;
+        }
+        h3{
+            padding-top: 2rem;
+            font-size: 20px;
+        }
+        
+     }
+     @media (min-width: 1024px) { 
+        .peoples{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+     }
+     @media (min-width: 1536px) { 
+        .peoples{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+     }
 
     .release-date{
         margin-bottom: 15px;
     }
-    @media screen and (max-width: 976px) {
-        .peoples{           
-            grid-template-columns: repeat(4,1fr);         
-        }
-    }
-    @media screen and (max-width: 790px) {
-        .peoples{
-            grid-template-columns: repeat(3,1fr); 
-            grid-gap: 0rem;
-            padding: 0;
-        }
-        .release-date{
-           
-        }
-    }
-    @media screen and (max-width: 480px) {
-        .peoples-container{
-            padding:  0;
-        }
-        .peoples{
-            grid-template-columns: repeat(2,1fr); 
-            
-        }
-        img{
-            height: 230px !important;       
-        }
-        p{
-            font-size: 12px;        
-        }
-        .people{
-            max-width: 80%;
-        }
-        h1{
-        padding: 0rem 0 0 2rem !important;
+
+
+    h3{
         text-align: center;
-    }
-    }
-    img{
-        
-        border-radius: 6px;
-        height: 270px;
-    }
-    .image-container{
-       position: relative; 
-    }
-    h1{
-        padding: 2rem 0 0 2rem;
     }
     .rating{
         position: absolute;

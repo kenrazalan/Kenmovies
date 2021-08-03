@@ -6,7 +6,7 @@ function Peoples({results,isLoading,title}) {
     return (
         <PeopleWrapper>
         <div className="peoples-container">
-            <h1>{title}</h1>
+            <h3>{title}</h3>
             <div className="peoples"> 
                 {results?.map(res=>{
                     return( 

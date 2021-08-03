@@ -12,7 +12,7 @@ function PeopleCard({people,isLoading}) {
                 <img 
                 src={people?.profile_path === null? profile :`https://image.tmdb.org/t/p/w500/${people?.profile_path}`} 
                 alt={people?.name} key={people?.id}/>
-            : <Skeleton width={170} height={270} />}
+            : <Skeleton height={414} />}
         </div>
                 {!isLoading ? <>
                          <p className="title bold">{people?.name}</p>

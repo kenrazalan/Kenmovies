@@ -2,15 +2,13 @@ import styled from 'styled-components'
 
 export const GenreWrapper  = styled.div`
     .genres-container{    
-
-        width:100%;
-        padding:  0rem 4.8rem;
+        padding:  0rem 10px;
     }
     .imahe{
         position: relative;
         border-radius: 6px;
-        height: 150px;
-        width: 266px;
+        height: 100px;
+        width: 100%;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -33,51 +31,59 @@ export const GenreWrapper  = styled.div`
          opacity: 0.8;
          transition: .3s;
     }
-    .genres{      
-        padding-bottom: 50px;
+    .genres {
         margin-top: 50px;
-        width:100%;
         display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: 1.2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". ."
+            ". .";
+
     }
     .image-container{
-        //position: relative;
+       position: relative; 
+       width: 100%;
     }
-    h1{
-        padding: 2rem 0 0 2rem;
+    h3{
+        
+        text-align: center;
     }
     p{  
-        font-size: 2rem;
+        font-size: .8rem;
         z-index: 2;
         font-weight: bold;
     }
-    @media screen and (max-width: 1020px) {
-        .genres{           
-            grid-template-columns: repeat(3,1fr);         
-        }
-    }
-    @media screen and (max-width: 876px) {
-        .genres{           
-            grid-template-columns: repeat(2,1fr);         
+    @media (min-width: 768px) { 
+        .genres{ 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px 30px;
         }
         .genres-container{
-            padding:0;
+            padding:  0rem 40px;
         }
-    }
-    @media screen and (max-width: 480px) {
-        .imahe{           
-           width:160px ;
-           height: 70px;
+        h3{
+            padding-top: 2rem;
+            font-size: 20px;
         }
-        h1{
-            padding: 0rem 0 0 2rem;
-            text-align: center;
-    }
         p{
-            font-size:1.1rem;
-            
+            font-size: 1.5rem;
         }
-    }
+        
+     }
+     @media (min-width: 1024px) { 
+        .genres{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+     }
+     @media (min-width: 1536px) { 
+        .genres{ 
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+     }
 `

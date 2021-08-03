@@ -1,4 +1,4 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 .App {
   
 }
@@ -32,7 +32,8 @@ img{
 }
 
 body,h1,h2,h3,h4,h5,h6{
-  font-family: Yantramanav,Helvetica,Arial,sans-serif;
+  /* font-family: Yantramanav,Helvetica,Arial,sans-serif; */
+  font-family: 'Oswald', sans-serif;
 }
 a{
   text-decoration: none;

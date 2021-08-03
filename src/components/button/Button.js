@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router'
 
+
 const ButtonContainer  = styled.div`
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
     button{
         display: flex;
         margin: 30px auto;
@@ -10,10 +12,12 @@ const ButtonContainer  = styled.div`
         border: 1px solid rgb(59, 179, 59);
         font-size: 1rem;
         border-radius: .6rem;
-        padding: 1rem 2rem;
+        padding: .7rem 2rem;
         font-weight: 700;
         color: #fff;
         cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 2;
     }
 `
 

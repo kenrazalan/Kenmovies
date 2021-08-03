@@ -45,10 +45,11 @@ function SearchResults() {
                     return(
                         <Link to={`/preview/${result?.id}/movie`}>
                         <div className="result pointer">
-                            {!isLoading? <img 
+                            {!isLoading? 
+                            <img 
                             src={result.poster_path === null ? photo : `https://image.tmdb.org/t/p/w500/${result.poster_path}`} 
                             alt={result.original_title} key={result.id}/> 
-                            : <Skeleton width={180} height={270}/>}
+                            : <Skeleton height={326}/>}
                             
                             <p className="title bold">{!isLoading ? result.original_title 
                                 : <Skeleton/>}</p>
