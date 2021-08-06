@@ -7,6 +7,10 @@ export const PaginationWrapper  = styled.div`
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        margin: 3rem;
+    }
+    @media (min-width: 1024px) { 
+        margin: 5rem;
     }
     .pagination-container .pagination{
         display: flex;

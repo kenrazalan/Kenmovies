@@ -40,7 +40,7 @@ export const BannerContainer  = styled.div`
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     }
     .banner .banner-info h2{
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-weight: normal;
         /* max-height: 150px;
         overflow: hidden; */
@@ -110,6 +110,9 @@ export const BannerContainer  = styled.div`
         }
         .banner .banner-info h1{
             text-align: unset;
+        }
+        .banner .banner-info h2{
+            font-size: 1.3rem;
         }
         .banner {
             grid-template-columns: 1fr 1fr;

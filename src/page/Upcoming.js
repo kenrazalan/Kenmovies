@@ -8,6 +8,7 @@ function Upcoming() {
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(fetchUpcomings())
+        window.scrollTo(0,0)
     },[dispatch])
     
     const upcomings = useSelector(state => state.upcomings.items) 
