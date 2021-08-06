@@ -125,7 +125,7 @@ export const UpcommingsWrapper  = styled.div`
         object-fit: cover;
         animation-fill-mode: forwards;
         -webkit-animation-fill-mode: forwards;
-        -webkit-animation-duration: 0.7s;
+        -webkit-animation-duration: 0.4s;
         animation-duration: 0.7s;
         animation-delay: 0.1s;
     }

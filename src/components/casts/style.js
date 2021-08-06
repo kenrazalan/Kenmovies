@@ -6,6 +6,12 @@ export const CastsWrapper  = styled.div`
         min-height: 33vh;
         padding:  0rem 10px;
     }
+    .cast-container {
+        position: relative; 
+       width: 100%;
+       background-color: #131519;
+       height: 286px;
+    }
     .casts {
         margin-top: 50px;
         display: grid;
@@ -34,18 +40,14 @@ export const CastsWrapper  = styled.div`
      }
      @media (min-width: 1024px) { 
         .casts{ 
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-     }
-     @media (min-width: 1536px) { 
-        .casts{ 
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
      }
-    .cast-img{
+
+    img{
         width: 100%;
         border-radius: 6px;
-        height: auto;
+        height: 100%;
     }
     .character{
         font-size: 11px;
@@ -53,31 +55,47 @@ export const CastsWrapper  = styled.div`
     .title{
         padding: 2rem 0 0 2rem;
     }
-    /* @media screen and (max-width: 1100px) {
-        .casts{           
-            grid-template-columns: repeat(5,1fr);         
+    .img-loading {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        object-fit: cover;
+    }
+
+
+
+    .img-loaded {
+        animation: fadeInImg .5s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.7s;
+        animation-delay: 0.1s;
+    }
+
+
+    .lazyload-wrapper{
+        transition: all 0.3s ease-in-out 0s;
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes fadeInImg {
+        to {
+            opacity: 1;
         }
     }
-    @media screen and (max-width: 976px) {
-        .casts{           
-            grid-template-columns: repeat(4,1fr);         
+
+    @-webkit-keyframes fadeInImg {
+            to {
+            opacity: 1;
         }
     }
-    @media screen and (max-width: 790px) {
-        .casts{
-            grid-template-columns: repeat(3,1fr); 
-            
-            padding: 0;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        .casts-container{
-            padding: 0;
-        }
-        .casts{
-            grid-template-columns: repeat(2,1fr); 
-            
-            padding: 0;
-        }
-    } */
+
     `

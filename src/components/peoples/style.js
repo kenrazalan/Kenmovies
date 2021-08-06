@@ -9,11 +9,13 @@ export const PeopleWrapper  = styled.div`
     img{
         width: 100%;
         border-radius: 6px;
-        height: auto;
+        height: 100%;
     }
     .image-container{
        position: relative; 
        width: 100%;
+       background-color: #131519;
+       height: 286px;
     }
     .people{
         display: flex;
@@ -88,5 +90,48 @@ export const PeopleWrapper  = styled.div`
         width: fit-content;
         padding: 1px 5px;
         border-radius: 3px;
+    }
+
+    .img-loading {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        object-fit: cover;
+    }
+
+
+
+    .img-loaded {
+        animation: fadeInImg .5s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+        animation-delay: 0.1s;
+    }
+
+
+    .lazyload-wrapper{
+        transition: all 0.3s ease-in-out 0s;
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes fadeInImg {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeInImg {
+            to {
+            opacity: 1;
+        }
     }
     `
