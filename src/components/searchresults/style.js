@@ -5,6 +5,13 @@ export const SearchWrapper= styled.div`
         padding:  0rem 10px;
 
     }
+    .image-container{
+       position: relative; 
+       width: 100%;
+       background-color: #131519;
+       height: 286px;
+
+    }
 
     .search-results {
         margin-top: 50px;
@@ -33,14 +40,10 @@ export const SearchWrapper= styled.div`
      }
      @media (min-width: 1024px) { 
         .search-results{ 
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-     }
-     @media (min-width: 1536px) { 
-        .search-results{ 
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
      }
+
     .result{
         margin-bottom: 20px;
     }
@@ -54,51 +57,49 @@ export const SearchWrapper= styled.div`
     img{
         width: 100%;
         border-radius: 6px;
-        height: auto;
+        height: 100%;
     }
-    /* @media screen and (max-width: 976px) {
-        .search-results{           
-            grid-template-columns: repeat(4,1fr);         
-        }
+    .img-loading {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        object-fit: cover;
     }
-    @media screen and (max-width: 790px) {
-        .search-results{
-            grid-template-columns: repeat(3,1fr); 
-            grid-gap: 0rem;
-            padding: 0;
-        }
-        .search-header{
-            margin-top: 100px;
-        }
+
+
+
+    .img-loaded {
+        animation: fadeInImg .5s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.7s;
+        animation-delay: 0.1s;
     }
-    @media screen and (max-width: 480px) {
-        .search-container{
-            padding:  0;
-        }
-        .search-header{
-            padding-left: 10%; 
-        }
-        .search-header{
-            font-size: 17px;
-        }
-        .search-results{
-            grid-template-columns: repeat(2,1fr); 
-            
-        }
-        img{
-            height: 230px !important;       
-        }
-        p{
-            font-size: 12px;        
-        }
-        .result{
-            max-width: 80%;
+
+
+    .lazyload-wrapper{
+        transition: all 0.3s ease-in-out 0s;
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes fadeInImg {
+        to {
+            opacity: 1;
         }
     }
-    @media screen and (max-width: 355px) {
-        img{
-            height: 210px !important;
+
+    @-webkit-keyframes fadeInImg {
+            to {
+            opacity: 1;
         }
-    } */
+    }
     
 `

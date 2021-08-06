@@ -7,6 +7,7 @@ import { fetchSearch } from '../../redux'
 import {SearchWrapper} from './style'
 import photo from '../../images/noimage.png'
 import Pagination from '../pagination/Pagination'
+import LazyLoad from 'react-lazyload'
 
 function SearchResults() {
     const dispatch = useDispatch();
@@ -19,6 +20,10 @@ function SearchResults() {
     const searchResults = useSelector(state => state.search.items)
     const isLoading = useSelector(state => state.search.loading)
     const [currentPage,setCurrentPage] = useState(searchResults?.page)
+    const [loaded, setLoaded] = useState(false);
+    const onLoad = () => {
+        setLoaded(true);
+      };
 
     const handleChange =(page) =>{
         if (searchResults?.page !== page) {
@@ -45,12 +50,21 @@ function SearchResults() {
                     return(
                         <Link to={`/preview/${result?.id}/movie`}>
                         <div className="result pointer">
-                            {!isLoading? 
-                            <img 
-                            src={result.poster_path === null ? photo : `https://image.tmdb.org/t/p/w500/${result.poster_path}`} 
-                            alt={result.original_title} key={result.id}/> 
-                            : <Skeleton height={326}/>}
-                            
+                            <div className="image-container">
+                                {!isLoading? 
+                                <LazyLoad
+                                    debounce={false}
+                                    offset={500}
+                                    once
+                                     >                      
+                                    <img 
+                                    className={`${loaded ? 'img-loaded' : 'img-loading'}`}
+                                    onLoad={onLoad}                              
+                                    src={result.poster_path === null ? photo : `https://image.tmdb.org/t/p/w500/${result.poster_path}`} 
+                                    alt={result.original_title} key={result.id}/> 
+                                </LazyLoad>
+                                : <Skeleton height={286}/> }
+                            </div>
                             <p className="title bold">{!isLoading ? result.original_title 
                                 : <Skeleton/>}</p>
                             <p className="release-date">{!isLoading ? result.release_date 

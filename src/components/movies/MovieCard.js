@@ -17,7 +17,7 @@ function MovieCard({ movie, isLoading }) {
                 {!isLoading ?
                     <LazyLoad
                     debounce={false}
-                    offset={100}
+                    offset={500}
                     once >
                         <div style={{
                             background: movie.vote_average > 7 ? "#3bb33b" : "#aaa"

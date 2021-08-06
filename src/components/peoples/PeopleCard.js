@@ -16,7 +16,7 @@ function PeopleCard({people,isLoading}) {
             {!isLoading ? 
             <LazyLoad
                     debounce={false}
-                    offset={100}
+                    offset={500}
                     once >
                 <img 
                 className={`${loaded ? 'img-loaded' : 'img-loading'}`}
